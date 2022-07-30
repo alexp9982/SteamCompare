@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SteamCompare.ComparePage"
+             xmlns:viewmodel="clr-namespace:SteamCompare.ViewModel"
+             x:DataType="viewmodel:ComparePageViewModel"
+             Title="Comparison">
+    <Grid RowDefinitions="*, *, 33, *, *, 33, *, *, *"
+          ColumnDefinitions="*, *, *"
+          Margin="20,35,20,20">
+        <Label Text="Enter User 1 Here"
+               FontSize="20"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Grid.Row="1"
+               Grid.Column="1"/>
+        <Entry Grid.Row="2"
+               Grid.Column="1"
+               Placeholder="Enter SteamID64 or username"
+               Text="{Binding User1}"
+               TextChanged="OnText1Changed" />
+        <Label Text="Enter User 2 Here"
+               FontSize="20"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Grid.Row="4"
+               Grid.Column="1"/>
+        <Entry Grid.Row="5"
+               Grid.Column="1"
+               TextColor="White"
+               Text="{Binding User2}"
+               Placeholder="Enter SteamID64 or username"
+               TextChanged="OnText2Changed" />
+        <Button Grid.Row="7" 
+                Grid.Column="1"
+                Text="Compare!"
+                x:Name="CompareButton"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                IsEnabled="False"
+                Command="{Binding NavigateCommand}"
+                />
+        
+    </Grid>
+</ContentPage>

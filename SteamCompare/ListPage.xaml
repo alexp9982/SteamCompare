@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:SteamCompare.ViewModel"
+             x:DataType="viewmodel:ListPageViewModel"
+             x:Class="SteamCompare.ListPage"
+             Title="Results">
+    <Grid RowDefinitions="35, *"
+          ColumnDefinitions=".75*, .25*"
+          Padding="10"
+          RowSpacing="10"
+          ColumnSpacing="10">
+        <Label 
+            x:Name="StatusTextLabel"
+            Text="{Binding StatusText}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            x:Name="InvalidTextLabel"
+            Text="{Binding InvalidText}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            TextColor="Red"/>
+        <Button Grid.Column="1"
+                Text="Get Results"
+                x:Name="ResultsButton"
+                FontAttributes="Bold"
+                VerticalOptions="Center"
+                IsEnabled="{Binding ButtonEnabled}"
+                Command="{Binding GetResultsCommand}"/>
+        <CollectionView Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        ItemsSource="{Binding Games}">
+            <!--<CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Pie</x:String>
+                    <x:String>shit</x:String>
+                </x:Array>
+            </CollectionView.ItemsSource>-->
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="{x:Type x:String}">
+                    <Grid Padding="0,5">
+                        <Border Stroke="#3F3F3F"
+                                StrokeThickness="4"
+                                StrokeShape="RoundRectangle 10,10,10,10"
+                                Background="#D3D3D3"
+                                Padding="16,14">
+                            <Label Text="{Binding .}"
+                                   FontSize="22"
+                                   TextColor="Black">
+                            </Label>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+    </Grid>
+</ContentPage>
