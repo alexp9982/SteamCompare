@@ -16,7 +16,7 @@
                Grid.Column="1"/>
         <Entry Grid.Row="2"
                Grid.Column="1"
-               Placeholder="Enter SteamID64 or username"
+               Placeholder="Enter SteamID64 or Username"
                Text="{Binding User1}"
                TextChanged="OnText1Changed" />
         <Label Text="Enter User 2 Here"
@@ -29,7 +29,7 @@
                Grid.Column="1"
                TextColor="White"
                Text="{Binding User2}"
-               Placeholder="Enter SteamID64 or username"
+               Placeholder="Enter SteamID64 or Username"
                TextChanged="OnText2Changed" />
         <Button Grid.Row="7" 
                 Grid.Column="1"
