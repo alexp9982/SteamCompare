@@ -17,7 +17,7 @@ namespace SteamCompare.ViewModel;
 
 public partial class ListPageViewModel : ObservableObject
 {
-    SteamWebInterfaceFactory webInterfaceFactory = new SteamWebInterfaceFactory("CC0DC2D00878429DC7C1B02246A9CDFE");
+    SteamWebInterfaceFactory webInterfaceFactory = new SteamWebInterfaceFactory("<API KEY HERE>");
 
     [ObservableProperty]
     string user1;
