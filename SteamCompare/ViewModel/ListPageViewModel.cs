@@ -14,11 +14,10 @@ namespace SteamCompare.ViewModel;
 
 [QueryProperty(nameof(User1), "User1")]
 [QueryProperty(nameof(User2), "User2")]
+[QueryProperty(nameof(Apikey), "Apikey")]
 
 public partial class ListPageViewModel : ObservableObject
 {
-    SteamWebInterfaceFactory webInterfaceFactory = new SteamWebInterfaceFactory("<API KEY HERE>");
-
     [ObservableProperty]
     string user1;
 
@@ -27,6 +26,9 @@ public partial class ListPageViewModel : ObservableObject
 
     [ObservableProperty]
     bool buttonEnabled;
+
+    [ObservableProperty] 
+    string apikey;
 
     //Waiting for Results...
     [ObservableProperty] private string statusText;
@@ -56,6 +58,20 @@ public partial class ListPageViewModel : ObservableObject
         Games.Clear();
         List<string> user1Games = new List<string>();
         List<string> user2Games = new List<string>();
+        StatusText = "Checking API Key...";
+        SteamWebInterfaceFactory webInterfaceFactory;
+        try
+        {
+            webInterfaceFactory = new SteamWebInterfaceFactory(apikey);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            StatusText = "";
+            InvalidText = "Your API key is not valid. Ensure you followed the instructions correctly and try again";
+            ButtonEnabled = true;
+            return;
+        }
         StatusText = "Checking users...";
 
         var playerServiceInterface = webInterfaceFactory.CreateSteamWebInterface<PlayerService>(new HttpClient());

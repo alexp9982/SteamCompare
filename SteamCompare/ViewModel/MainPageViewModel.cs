@@ -11,5 +11,5 @@ namespace SteamCompare.ViewModel;
 public partial class MainPageViewModel : ObservableObject
 {
     [ICommand]
-    Task Navigate() => Shell.Current.GoToAsync(nameof(ComparePage));
+    Task Navigate() => Shell.Current.GoToAsync(nameof(KeyPage));
 }

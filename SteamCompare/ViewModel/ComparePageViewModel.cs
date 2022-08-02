@@ -8,6 +8,8 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace SteamCompare.ViewModel;
 
+[QueryProperty(nameof(Apikey), "Apikey")]
+
 public partial class ComparePageViewModel : ObservableObject
 {
     [ObservableProperty]
@@ -16,11 +18,15 @@ public partial class ComparePageViewModel : ObservableObject
     [ObservableProperty]
     string user2;
 
+    [ObservableProperty]
+    string apikey;
+
     //$"{nameof(ListPage)}?User1={user1}?User2={user2}"
     [ICommand]
     async Task Navigate() => await Shell.Current.GoToAsync(nameof(ListPage), true, new Dictionary<string, object>
     {
         {"User1", user1},
-        {"User2", user2}
+        {"User2", user2},
+        {"Apikey", apikey}
     });
 }

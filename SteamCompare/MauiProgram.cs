@@ -18,7 +18,10 @@ public static class MauiProgram
 		builder.Services.AddSingleton<MainPage>();
 		builder.Services.AddSingleton<MainPageViewModel>();
 
-		builder.Services.AddSingleton<ComparePage>();
+        builder.Services.AddSingleton<KeyPage>();
+        builder.Services.AddSingleton<KeyPageViewModel>();
+
+        builder.Services.AddSingleton<ComparePage>();
 		builder.Services.AddSingleton<ComparePageViewModel>();
 
 		builder.Services.AddTransient<ListPage>();
