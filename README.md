@@ -17,6 +17,12 @@
 
 ## Info
 So this is a little project of mine that uses the brand new .NET MAUI. The application asks for a Steam API key as well as two Steam usernames. This is my first ever actual C# program, so code may be pretty messy. If you think you can simplify the code, or clean it up, please feel free to [make a pull request.](#pull-requests-and-issues)
+
+At this time, MAUI is still very buggy. A big example of that is the fact I can't provide a binary because it won't work, since WinUI3 doesn't support self-contained apps yet. For more information, as well as a possible timeframe of a binary, please refer to the following issues:
+
+[MAUI Issue](https://github.com/dotnet/maui/issues/3166)
+
+[WinUI3 Issue](https://github.com/microsoft/WindowsAppSDK/issues/2684)
  
 ---
 
