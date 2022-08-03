@@ -1,8 +1,10 @@
 {
   "profiles": {
-    "Windows Machine": {
-      "commandName": "MsixPackage",
-      "nativeDebugging": false
+    "SteamCompare (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "SteamCompare (Unpackaged)": {
+      "commandName": "Project"
     }
   }
 }
