@@ -49,12 +49,12 @@
 
 	<ItemGroup>
 	  <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
+	  <PackageReference Include="SteamWebAPI2" Version="4.3.2" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <ProjectReference Include="..\Steam.Models\Steam.Models.csproj" />
+	<!--<ItemGroup>
 	  <ProjectReference Include="..\SteamWebAPI2\SteamWebAPI2.csproj" />
-	</ItemGroup>
+	</ItemGroup>-->
 
 	<ItemGroup>
 	  <MauiXaml Update="ComparePage.xaml">

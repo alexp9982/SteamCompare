@@ -1,5 +1,4 @@
 using SteamCompare.ViewModel;
-using SteamWebAPI2.Utilities;
 namespace SteamCompare;
 
 public partial class ListPage : ContentPage
