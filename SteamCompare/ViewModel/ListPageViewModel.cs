@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,7 +67,7 @@ public partial class ListPageViewModel : ObservableObject
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
+            Debug.WriteLine(e);
             StatusText = "";
             InvalidText = "Your API key is not valid. Ensure you followed the instructions correctly and try again";
             ButtonEnabled = true;
@@ -104,7 +105,7 @@ public partial class ListPageViewModel : ObservableObject
                 StatusText = "";
                 InvalidText = "User 1 is not valid, ensure User 1 is correct and try again";
                 ButtonEnabled = true;
-                Console.WriteLine(e);
+                Debug.WriteLine(e);
                 return;
             }
             if (ownedGames.Data.GameCount == 0)
@@ -147,7 +148,7 @@ public partial class ListPageViewModel : ObservableObject
                 StatusText = "";
                 InvalidText = "User 2 is not valid, ensure User 2 is correct and try again";
                 ButtonEnabled = true;
-                Console.WriteLine(e);
+                Debug.WriteLine(e);
                 return;
             }
             if (ownedGames.Data.GameCount == 0)
