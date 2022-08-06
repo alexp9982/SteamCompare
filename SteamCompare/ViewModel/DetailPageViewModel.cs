@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace SteamCompare.ViewModel;
 
 public partial class DetailPageViewModel : ObservableObject
 {
-    [ICommand]
+    [RelayCommand]
     Task Navigate() => Shell.Current.GoToAsync(nameof(ComparePage));
 }
