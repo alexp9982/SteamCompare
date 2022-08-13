@@ -53,9 +53,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="AutoMapper" Version="10.1.1" />
-		<PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
-		<PackageReference Include="SteamWebAPI2" Version="4.3.2" />
+	  <PackageReference Include="AutoMapper" Version="11.0.1" />
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	  <PackageReference Include="SteamWebAPI2" Version="4.4.0" />
 	</ItemGroup>
 
 	<!--<ItemGroup>

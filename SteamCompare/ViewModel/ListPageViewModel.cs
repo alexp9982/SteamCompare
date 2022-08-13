@@ -5,8 +5,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using Steam.Models.SteamCommunity;
 using SteamWebAPI2.Interfaces;
 using SteamWebAPI2.Utilities;
@@ -47,10 +47,10 @@ public partial class ListPageViewModel : ObservableObject
         string user2actual = user2;
     }
 
-    [ICommand]
+    [RelayCommand]
     Task Navigate() => Shell.Current.GoToAsync(nameof(ComparePage));
 
-    [ICommand]
+    [RelayCommand]
     async Task GetResults()
     {
         ButtonEnabled = false;
