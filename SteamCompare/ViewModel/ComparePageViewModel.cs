@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace SteamCompare.ViewModel;
 
@@ -22,7 +22,7 @@ public partial class ComparePageViewModel : ObservableObject
     string apikey;
 
     //$"{nameof(ListPage)}?User1={user1}?User2={user2}"
-    [ICommand]
+    [RelayCommand]
     async Task Navigate() => await Shell.Current.GoToAsync(nameof(ListPage), true, new Dictionary<string, object>
     {
         {"User1", user1},
