@@ -27,7 +27,6 @@
                Grid.Column="1"/>
         <Entry Grid.Row="5"
                Grid.Column="1"
-               TextColor="White"
                Text="{Binding User2}"
                Placeholder="Enter SteamID64 or Username"
                TextChanged="OnText2Changed" />
