@@ -39,13 +39,13 @@ NOTE: Keep your Steam API key a **SECRET**! Do not give it to anyone, as it allo
 
 Step 1. Go to the [Steam API Key site](https://steamcommunity.com/dev/apikey)
 
-![Step 2](Images/Step2.PNG)
-
 Step 2. In the field labeled Domain Name, type in "127.0.0.1". This stands for localhost (since the application will be running on your computer). Ensure the checkbox is checked and click Register.
 
-![Step 3](Images/Step3.PNG)
+![Step 2](Images/Step2.PNG)
 
 Step 3. Copy the "Key" field and paste this into the application in the API key field.
+
+![Step 3](Images/Step3.PNG)
 
 ---
 
