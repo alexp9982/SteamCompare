@@ -20,8 +20,7 @@ public partial class ComparePageViewModel : ObservableObject
 
     [ObservableProperty]
     string apikey;
-
-    //$"{nameof(ListPage)}?User1={user1}?User2={user2}"
+    
     [RelayCommand]
     async Task Navigate() => await Shell.Current.GoToAsync(nameof(ListPage), true, new Dictionary<string, object>
     {

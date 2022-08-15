@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Steam.Models.SteamCommunity;
-using SteamWebAPI2.Interfaces;
-using SteamWebAPI2.Utilities;
+using SteamCompare.Classes;
+using SteamKit2;
+using static SteamKit2.GC.Dota.Internal.CMsgDOTAFrostivusTimeElapsed;
 
 namespace SteamCompare.ViewModel;
 
@@ -51,19 +52,88 @@ public partial class ListPageViewModel : ObservableObject
     Task Navigate() => Shell.Current.GoToAsync(nameof(ComparePage));
 
     [RelayCommand]
+    void DebugWrite()
+    {
+        // dynamic playerService = WebAPI.GetInterface("IPlayerService", apikey);
+        // KeyValue ownedGames = playerService.GetOwnedGames(steamid: Convert.ToUInt64(user1),
+        //     include_appinfo: true, include_played_free_games: true);
+        // Debug.Write(ownedGames);
+        List<string> userGames = Class1.Bob(user1, apikey);
+        Debug.Write(userGames);
+        return;
+    }
+
+    [RelayCommand]
     async Task GetResults()
     {
+        var user1a = user1;
+        var user2a = user2;
+        var apikeya = apikey;
         ButtonEnabled = false;
         InvalidText = "";
         StatusText = "Preparing...";
         Games.Clear();
         List<string> user1Games = new List<string>();
         List<string> user2Games = new List<string>();
-        StatusText = "Checking API Key...";
-        SteamWebInterfaceFactory webInterfaceFactory;
+        StatusText = "Checking input...";
+        //using dynamic playerService = WebAPI.GetInterface("IPlayerService", apikey);
+        //using dynamic steamUser = WebAPI.GetInterface("ISteamUser", apikey);
         try
         {
-            webInterfaceFactory = new SteamWebInterfaceFactory(apikey);
+            KeyValue ownedGames;
+            if (user1a.Length == 17 && user1a.All(char.IsDigit))
+            {
+                using (dynamic playerService = WebAPI.GetInterface("IPlayerService", apikeya))
+                {
+                    ownedGames = playerService.GetOwnedGames(steamid: Convert.ToUInt64(user1a),
+                        include_appinfo: true, include_played_free_games: true);
+                }
+                var gameCount = ownedGames[ "game_count" ].AsString();
+                if (string.IsNullOrWhiteSpace(gameCount))
+                {
+                    StatusText = "";
+                    InvalidText = "User 1 is not valid or has no games, ensure User 1 is correct and try again";
+                    ButtonEnabled = true;
+                    return;
+                }
+            }
+
+            else
+            {
+                string user1AsString;
+                using (dynamic steamUser = WebAPI.GetInterface("ISteamUser", apikeya))
+                {
+                    KeyValue steamId = await steamUser.ResolveVanityURL(vanityurl: user1a);
+                    user1AsString = (steamId[ "steamid" ].AsString());
+                    if (string.IsNullOrWhiteSpace(user1AsString))
+                    {
+                        StatusText = "";
+                        InvalidText = "User 1 is not valid, ensure User 1 is correct and try again";
+                        ButtonEnabled = true;
+                        return;
+                    }
+                }
+
+                using (dynamic playerService = WebAPI.GetInterface("IPlayerService", apikeya))
+                {
+                    ownedGames = playerService.GetOwnedGames(steamid: Convert.ToUInt64(user1AsString),
+                        include_appinfo: true, include_played_free_games: true);
+                }
+
+                var gameCount = ownedGames[ "game_count" ].AsString();
+                if (string.IsNullOrWhiteSpace(gameCount))
+                {
+                    StatusText = "";
+                    InvalidText = "User 1 has no games, ensure User 1 is correct and try again";
+                    ButtonEnabled = true;
+                    return;
+                }
+            }
+
+            foreach (var userGames in ownedGames[" games "].Children)
+            {
+                user1Games.Add(userGames[" name "].AsString());
+            }
         }
         catch (Exception e)
         {
@@ -73,96 +143,59 @@ public partial class ListPageViewModel : ObservableObject
             ButtonEnabled = true;
             return;
         }
-        StatusText = "Checking users...";
+        /*try
+        {
+            KeyValue ownedGames;
+            if (user2.Length == 17 && user2.All(char.IsDigit))
+            {
+                ownedGames = playerService.GetOwnedGames(steamid: Convert.ToUInt64(user2),
+                    include_appinfo: true, include_played_free_games: true);
+                var gameCount = ownedGames[ "game_count" ].AsString();
+                if (string.IsNullOrWhiteSpace(gameCount))
+                {
+                    StatusText = "";
+                    InvalidText = "User 2 is not valid or has no games, ensure User 2 is correct and try again";
+                    ButtonEnabled = true;
+                    return Task.CompletedTask;
+                }
+            }
 
-        var playerServiceInterface = webInterfaceFactory.CreateSteamWebInterface<PlayerService>(new HttpClient());
-        var steamUserInterface = webInterfaceFactory.CreateSteamWebInterface<SteamUser>(new HttpClient());
-        if (user1.Length == 17 && user1.All(char.IsDigit))
-        {
-            var ownedGames = await playerServiceInterface.GetOwnedGamesAsync(Convert.ToUInt64(user1),true,true);
-            if (ownedGames.Data.GameCount == 0)
+            else
             {
-                StatusText = "";
-                InvalidText = "User 1 is not valid or has no games, ensure User 1 is correct and try again";
-                ButtonEnabled = true;
-                return;
+                KeyValue steamId = steamUser.ResolveVanityURL(vanityurl: user2);
+                var user2AsString = (steamId[ "steamid" ].AsString());
+                if (string.IsNullOrWhiteSpace(user2AsString))
+                {
+                    StatusText = "";
+                    InvalidText = "User 2 is not valid, ensure User 2 is correct and try again";
+                    ButtonEnabled = true;
+                    return Task.CompletedTask;
+                }
+                ownedGames = playerService.GetOwnedGames(steamid: Convert.ToUInt64(user2AsString),
+                    include_appinfo: true, include_played_free_games: true);
+                var gameCount = ownedGames[ "game_count" ].AsString();
+                if (string.IsNullOrWhiteSpace(gameCount))
+                {
+                    StatusText = "";
+                    InvalidText = "User 2 has no games, ensure User 2 is correct and try again";
+                    ButtonEnabled = true;
+                    return Task.CompletedTask;
+                }
             }
-            foreach (var ownedGame in ownedGames.Data.OwnedGames)
+
+            foreach (var userGames in ownedGames[" games "].Children)
             {
-                user1Games.Add(ownedGame.Name);
-            }
-        }
-        else
-        {
-            ISteamWebResponse<OwnedGamesResultModel> ownedGames;
-            try
-            {
-                var user1ID = await steamUserInterface.ResolveVanityUrlAsync(user1);
-                ownedGames = await playerServiceInterface.GetOwnedGamesAsync(user1ID.Data,true,true);
-            }
-            catch (Exception e)
-            {
-                StatusText = "";
-                InvalidText = "User 1 is not valid, ensure User 1 is correct and try again";
-                ButtonEnabled = true;
-                Debug.WriteLine(e);
-                return;
-            }
-            if (ownedGames.Data.GameCount == 0)
-            {
-                StatusText = "";
-                InvalidText = "User 1 has no games, ensure User 1 is correct and try again";
-                ButtonEnabled = true;
-                return;
-            }
-            foreach (var ownedGame in ownedGames.Data.OwnedGames)
-            {
-                user1Games.Add(ownedGame.Name);
+                user2Games.Add(userGames[" name "].AsString());
             }
         }
-        if (user2.Length == 17 && user2.All(char.IsDigit))
+        catch (Exception e)
         {
-            var ownedGames = await playerServiceInterface.GetOwnedGamesAsync(Convert.ToUInt64(user2),true,true);
-            if (ownedGames.Data.GameCount == 0)
-            {
-                StatusText = "";
-                InvalidText = "User 2 is not valid or has no games, ensure User 2 is correct and try again";
-                ButtonEnabled = true;
-                return;
-            }
-            foreach (var ownedGame in ownedGames.Data.OwnedGames)
-            {
-                user2Games.Add(ownedGame.Name);
-            }
-        }
-        else
-        {
-            ISteamWebResponse<OwnedGamesResultModel> ownedGames;
-            try
-            {
-                var user2ID = await steamUserInterface.ResolveVanityUrlAsync(user2);
-                ownedGames = await playerServiceInterface.GetOwnedGamesAsync(user2ID.Data,true,true);
-            }
-            catch (Exception e)
-            {
-                StatusText = "";
-                InvalidText = "User 2 is not valid, ensure User 2 is correct and try again";
-                ButtonEnabled = true;
-                Debug.WriteLine(e);
-                return;
-            }
-            if (ownedGames.Data.GameCount == 0)
-            {
-                StatusText = "";
-                InvalidText = "User 2 has no games, ensure User 2 is correct and try again";
-                ButtonEnabled = true;
-                return;
-            }
-            foreach (var ownedGame in ownedGames.Data.OwnedGames)
-            {
-                user2Games.Add(ownedGame.Name);
-            }
-        }
+            Debug.WriteLine(e);
+            StatusText = "";
+            InvalidText = "Your API key is not valid. Ensure you followed the instructions correctly and try again";
+            ButtonEnabled = true;
+            return Task.CompletedTask;
+        }*/
 
         StatusText = "Parsing Results...";
         var combinedGames = user1Games.Intersect(user2Games);
@@ -170,5 +203,6 @@ public partial class ListPageViewModel : ObservableObject
             Games.Add(combinedGame);
         StatusText = "Have Fun!";
         ButtonEnabled = true;
+        return;
     }
 }

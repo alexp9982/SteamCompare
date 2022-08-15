@@ -27,7 +27,7 @@
                 FontAttributes="Bold"
                 VerticalOptions="Center"
                 IsEnabled="{Binding ButtonEnabled}"
-                Command="{Binding GetResultsCommand}"/>
+                Command="{Binding DebugWriteCommand}"/>
         <CollectionView Grid.Row="1"
                         Grid.ColumnSpan="2"
                         ItemsSource="{Binding Games}">
