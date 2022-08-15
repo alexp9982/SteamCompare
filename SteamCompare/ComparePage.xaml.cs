@@ -13,7 +13,8 @@ public partial class ComparePage : ContentPage
 	{
 		InitializeComponent();
 		BindingContext = vm;
-	}
+        CompareButton.IsEnabled = false;
+    }
 
 	public void OnText1Changed(object sender, TextChangedEventArgs e)
 	{
