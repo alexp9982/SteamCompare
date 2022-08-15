@@ -35,13 +35,13 @@
 		<GenerateAppxPackageOnBuild>true</GenerateAppxPackageOnBuild>
 		<AppxPackageSigningEnabled>true</AppxPackageSigningEnabled>
 	</PropertyGroup>
-	
-		<PropertyGroup Condition="$(TargetFramework.Contains('-ios'))">
+  
+  	<PropertyGroup Condition="$(TargetFramework.Contains('-ios')) and '$(Configuration)' == 'Release'">
 		<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
 	</PropertyGroup>
 
-	
-		<PropertyGroup Condition="$(TargetFramework.Contains('-maccatalyst'))">
+  
+    <PropertyGroup Condition="$(TargetFramework.Contains('-maccatalyst')) and '$(Configuration)' == 'Release'">
 		<RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers>
 	</PropertyGroup>
 	
