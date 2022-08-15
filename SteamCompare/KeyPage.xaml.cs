@@ -30,30 +30,38 @@ public partial class KeyPage : ContentPage
         var answer = await DisplayAlert("Confirm", "Are you sure you want to open 'https://steamcommunity.com/dev/apikey' in your browser?", "Yes", "No");
         if (answer)
         {
-            string url = "https://steamcommunity.com/dev/apikey";
+            var url = "https://steamcommunity.com/dev/apikey";
             try
             {
-                Process.Start(url);
+                if (OperatingSystem.IsWindows())
+                    Process.Start(url);
+                else if (OperatingSystem.IsMacCatalyst())
+                    await Browser.OpenAsync(new Uri(url), BrowserLaunchMode.SystemPreferred);
+                else if (OperatingSystem.IsIOS() && (OperatingSystem.IsIOSVersionAtLeast(10)))
+                    //await Launcher.OpenAsync(url);
+                    await Browser.OpenAsync(new Uri(url), BrowserLaunchMode.SystemPreferred);
+                else if (OperatingSystem.IsAndroid())
+                    await Browser.OpenAsync(new Uri(url), BrowserLaunchMode.SystemPreferred);
             }
             catch
             {
                 // hack because of this: https://github.com/dotnet/corefx/issues/10361
-                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                if (OperatingSystem.IsWindows())
                 {
                     url = url.Replace("&", "^&");
                     Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
                 }
-                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                else if (OperatingSystem.IsIOS())
                 {
-                    Process.Start("xdg-open", url);
+                    await Launcher.OpenAsync(url);
                 }
-                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                else if (OperatingSystem.IsMacCatalyst())
                 {
                     Process.Start("open", url);
                 }
                 else
                 {
-                    await DisplayAlert("Alert", "Unable to open webpage", "OK");
+                    await DisplayAlert("Alert", "Unable to open webpage, please create an issue on GitHub", "OK");
                 }
             }
             UrlButton.IsEnabled = true;
