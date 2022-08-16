@@ -6,7 +6,7 @@
              x:Class="SteamCompare.MainPage"
              Title="Start">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="settings_icon_light.png"
+        <ToolbarItem IconImageSource="{AppThemeBinding Default=settings_icon_dark.png, Light=settings_icon_dark.png, Dark=settings_icon_light.png}"
                      Order="Primary"
                      Priority="0"
                      Command="{Binding SettingsCommand}"/>
