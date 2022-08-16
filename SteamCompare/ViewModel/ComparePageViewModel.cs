@@ -29,4 +29,7 @@ public partial class ComparePageViewModel : ObservableObject
         {"User2", user2},
         {"Apikey", apikey}
     });
+
+    [RelayCommand]
+    async Task Settings() => await Shell.Current.GoToAsync(nameof(SettingsPage));
 }

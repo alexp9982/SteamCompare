@@ -5,6 +5,12 @@
              x:DataType="viewmodel:ListPageViewModel"
              x:Class="SteamCompare.ListPage"
              Title="Results">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="{AppThemeBinding Default=settings_icon_dark.png, Light=settings_icon_dark.png, Dark=settings_icon_light.png}"
+                     Order="Primary"
+                     Priority="0"
+                     Command="{Binding SettingsCommand}"/>
+    </ContentPage.ToolbarItems>
     <Grid RowDefinitions="35, *"
           ColumnDefinitions=".75*, .25*"
           Padding="10"

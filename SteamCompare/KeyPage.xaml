@@ -5,6 +5,12 @@
              xmlns:viewmodel="clr-namespace:SteamCompare.ViewModel"
              x:DataType="viewmodel:KeyPageViewModel"
              Title="API Key">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="{AppThemeBinding Default=settings_icon_dark.png, Light=settings_icon_dark.png, Dark=settings_icon_light.png}"
+                     Order="Primary"
+                     Priority="0"
+                     Command="{Binding SettingsCommand}"/>
+    </ContentPage.ToolbarItems>
     <Grid RowDefinitions="*, *, *, *, *, *, 33, *, *, *"
           ColumnDefinitions="*, *, *"
           Margin="20,35,20,20">

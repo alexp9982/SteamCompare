@@ -20,4 +20,7 @@ public partial class KeyPageViewModel : ObservableObject
     {
         {"Apikey", apikey}
     });
+
+    [RelayCommand]
+    async Task Settings() => await Shell.Current.GoToAsync(nameof(SettingsPage));
 }

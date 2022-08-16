@@ -48,7 +48,10 @@ public partial class ListPageViewModel : ObservableObject
     }
 
     [RelayCommand]
-    Task Navigate() => Shell.Current.GoToAsync(nameof(ComparePage));
+    async Task Navigate() => await Shell.Current.GoToAsync(nameof(ComparePage));
+
+    [RelayCommand]
+    async Task Settings() => await Shell.Current.GoToAsync(nameof(SettingsPage));
 
     [RelayCommand]
     async Task GetResults()
