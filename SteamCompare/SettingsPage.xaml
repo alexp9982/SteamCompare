@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SteamCompare.SettingsPage"
+             xmlns:viewmodel="clr-namespace:SteamCompare.ViewModel"
+             x:DataType="viewmodel:SettingsPageViewModel"
+             Title="Settings">
+    <ScrollView Margin="20">
+        <StackLayout
+            Spacing="10">
+            <Label
+                x:Name="ErrorText"
+                TextColor="Red"
+                Text=""/>
+            <Button
+                x:Name="NotifyButton"
+                Text="Enable Notifications"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Clicked="NotificationToggle"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

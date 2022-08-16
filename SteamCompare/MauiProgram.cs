@@ -1,4 +1,5 @@
-﻿using SteamCompare.ViewModel;
+﻿using SteamCompare.Classes;
+using SteamCompare.ViewModel;
 
 namespace SteamCompare;
 
@@ -15,8 +16,17 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		builder.Services.AddSingleton<MainPage>();
+#if WINDOWS
+        builder.Services.AddSingleton<INotificationService, WinUI.NotificationService>();
+#elif MACCATALYST
+        builder.Services.AddSingleton<INotificationService, MacCatalyst.NotificationService>();
+#endif
+
+        builder.Services.AddSingleton<MainPage>();
 		builder.Services.AddSingleton<MainPageViewModel>();
+
+        builder.Services.AddSingleton<SettingsPage>();
+        builder.Services.AddSingleton<SettingsPageViewModel>();
 
         builder.Services.AddSingleton<KeyPage>();
         builder.Services.AddSingleton<KeyPageViewModel>();
@@ -26,6 +36,8 @@ public static class MauiProgram
 
 		builder.Services.AddTransient<ListPage>();
 		builder.Services.AddTransient<ListPageViewModel>();
+
+        SettingsHolder.NotificationsEnabled = false;
 
 		return builder.Build();
 	}

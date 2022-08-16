@@ -47,14 +47,17 @@
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
+	</ItemGroup>
 
-		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
-		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	<ItemGroup>
+	  <None Remove="Resources\Images\settings_icon_dark.png" />
+	  <None Remove="Resources\Images\settings_icon_light.png" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="11.0.1" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+		<PackageReference Include="CommunityToolkit.WinUI.Notifications" Version="7.1.2" />
 		<PackageReference Include="SteamWebAPI2" Version="4.4.0" />
 	</ItemGroup>
 
@@ -68,11 +71,9 @@
 		<MauiXaml Update="ListPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-		<Folder Include="Classes\" />
-		<Folder Include="Resources\Images\" />
+		<MauiXaml Update="SettingsPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 	</ItemGroup>
 
 </Project>

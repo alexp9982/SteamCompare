@@ -5,6 +5,12 @@
              x:DataType="viewmodel:MainPageViewModel"
              x:Class="SteamCompare.MainPage"
              Title="Start">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="settings_icon_light.png"
+                     Order="Primary"
+                     Priority="0"
+                     Command="{Binding SettingsCommand}"/>
+    </ContentPage.ToolbarItems>
     <ScrollView>
         <VerticalStackLayout
             Spacing="25"
