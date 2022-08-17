@@ -1,7 +1,7 @@
 # SteamCompare
 
 
-## Table of Contents
+### Table of Contents
 
 [Info](#info)
 
