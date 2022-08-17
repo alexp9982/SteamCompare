@@ -27,9 +27,11 @@ At this time, MAUI is still very buggy. A big example of that is the fact I can'
 
 [WinUI3 Issue](https://github.com/microsoft/WindowsAppSDK/issues/2684)
 
-Other notable bugs:
+Known issues I can't fix (these are issues based around MAUI or another Microsoft owned repo):
 
 [Icon Blue Border Issue](https://github.com/dotnet/maui/issues/5162)
+
+[Navigation buttons appear to be disabled, but they aren't](https://github.com/dotnet/maui/issues/8309)
  
 ---
 
@@ -111,7 +113,7 @@ You'll see the comparison screen next. This is where you'll be typing the inform
 
 ### Results Screen
 
-Once you hit this screen, click the Get Results button to start the process of checking inputs and generating results. If you want to refresh, just hit the button again. ⚠️ NOTE: The amount of time this takes varies based off of internet connection and computer speed.
+Once you hit this screen, click the Get Results button to start the process of checking inputs and generating results. If you want to refresh, just hit the button again. ⚠️ NOTE: The amount of time this takes varies based on internet connection and computer speed.
 
 ---
 
@@ -133,12 +135,20 @@ I intend to do everything in this list, however, depending on my schedule, I may
 - ❌ Make Android version (Possibly in Google Play store?)
 - ❌ Make iOS versions of the program (won't be in app store, will have to be sideloaded)
 - ❌ Ensure ARM compatibility
+- 🟨 Rewrite code to save data in classes (Expected in v1.2)
+- 🟨 Make a settings page; this will allow notifications, color changing, anything else I can think of (expected in v1.2)
+- ❌ Make info page, which shows debug information, and other info regarding the application
+- ❌ Create progress bar when getting results, which will help users understand the progress on slower computers and internet (expected in v1.2)
+- ❌ Ensure window titles are correct on both Windows and macOS
+- ❌ Add the ability to check for updates to the application
+- ❌ Save settings to a file if requested
+- ❌ Create splashscreen with instructions on first launch
 
 ---
 
 ## Pull Requests and Issues
 
-If you believe you can help to improve the code, while retaining the same functionality, I welcome you to make a pull request. Anyone is welcome to do this, even newcomers, as I am new to C# as well. When creating a pull request, ensure there are no merge conflicts if possible, and that you detail the changes you made and why you made them. In addition, if the program won't compile as a result of your changes, they will be reverted or declined. Thank you for your help!
+If you believe you can help to improve the code, while retaining the same (or better) functionality, I welcome you to make a pull request. Anyone is welcome to do this, even newcomers, as I am new to C# as well. When creating a pull request, ensure there are no merge conflicts if possible, and that you detail the changes you made and why you made them. In addition, if the program won't compile as a result of your changes, they will be reverted or declined. Thank you for your help!
 
 If you believe you've come across an issue, feel free to create an issue in the Issues tab. I will try my best to solve it.
 
