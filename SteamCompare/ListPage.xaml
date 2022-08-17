@@ -11,19 +11,19 @@
                      Priority="0"
                      Command="{Binding SettingsCommand}"/>
     </ContentPage.ToolbarItems>
-    <Grid RowDefinitions="35, *"
+    <Grid RowDefinitions="35, 7, *"
           ColumnDefinitions=".75*, .25*"
           Padding="10"
           RowSpacing="10"
           ColumnSpacing="10">
         <Label 
             x:Name="StatusTextLabel"
-            Text="{Binding StatusText}"
+            Text=""
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Label 
             x:Name="InvalidTextLabel"
-            Text="{Binding InvalidText}"
+            Text=""
             VerticalOptions="Center" 
             HorizontalOptions="Center"
             TextColor="Red"/>
@@ -33,16 +33,14 @@
                 FontAttributes="Bold"
                 VerticalOptions="Center"
                 IsEnabled="True"
-                Command="{Binding GetResultsCommand}"/>
-        <CollectionView Grid.Row="1"
+                Clicked="GetResults"
+                Grid.RowSpan="2"/>
+        <ProgressBar Progress="0"
+                     Grid.Row="1"
+                     x:Name="ProgressBar"/>
+        <CollectionView Grid.Row="2"
                         Grid.ColumnSpan="2"
-                        ItemsSource="{Binding Games}">
-            <!--<CollectionView.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Pie</x:String>
-                    <x:String>shit</x:String>
-                </x:Array>
-            </CollectionView.ItemsSource>-->
+                        x:Name="GamesCollection">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="{x:Type x:String}">
                     <Grid Padding="0,5">

@@ -30,7 +30,7 @@ At this time, MAUI is still very buggy. A big example of that is the fact I can'
 
 Known issues I can't fix (these are issues based around MAUI or another Microsoft owned repo):
 - [Icon Blue Border Issue](https://github.com/dotnet/maui/issues/5162)
-- [Navigation buttons appear to be disabled, but they aren't](https://github.com/dotnet/maui/issues/8309)
+- [Buttons appear to be disabled, but they aren't](https://github.com/dotnet/maui/issues/8309)
 - [Three dot icon that does nothing, next to settings icon](https://github.com/dotnet/maui/issues/815)
  
 ---
@@ -135,10 +135,10 @@ I intend to do everything in this list, however, depending on my schedule, I may
 - ❌ Make Android version (Possibly in Google Play store?)
 - ❌ Make iOS versions of the program (won't be in app store, will have to be sideloaded)
 - ❌ Ensure ARM compatibility
-- 🟨 Rewrite code to save data in classes (Expected in v1.2)
+- ✅ Rewrite code to save data in classes (Expected in v1.2)
 - 🟨 Make a settings page; this will allow notifications, color changing, anything else I can think of (expected in v1.2)
 - ❌ Make info page, which shows debug information, and other info regarding the application
-- ❌ Create progress bar when getting results, which will help users understand the progress on slower computers and internet (expected in v1.2)
+- ✅ Create progress bar when getting results, which will help users understand the progress on slower computers and internet (and look cool) (expected in v1.2)
 - ❌ Ensure window titles are correct on both Windows and macOS
 - ❌ Add the ability to check for updates to the application
 - ❌ Save settings to a file if requested
