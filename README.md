@@ -1,6 +1,8 @@
 # SteamCompare
 
 
+## Table of Contents
+
 [Info](#info)
 
 [Getting a Steam API Key](#getting-a-steam-api-key)
@@ -23,15 +25,12 @@ So this is a little project of mine that uses the brand new .NET MAUI. The appli
 
 At this time, MAUI is still very buggy. A big example of that is the fact I can't provide a binary because it won't work, since WinUI3 doesn't support self-contained apps yet. For more information, as well as a possible timeframe of a binary, please refer to the following issues:
 
-[MAUI Issue](https://github.com/dotnet/maui/issues/3166)
-
-[WinUI3 Issue](https://github.com/microsoft/WindowsAppSDK/issues/2684)
+- [MAUI Issue](https://github.com/dotnet/maui/issues/3166)
+- [WinUI3 Issue](https://github.com/microsoft/WindowsAppSDK/issues/2684)
 
 Known issues I can't fix (these are issues based around MAUI or another Microsoft owned repo):
-
-[Icon Blue Border Issue](https://github.com/dotnet/maui/issues/5162)
-
-[Navigation buttons appear to be disabled, but they aren't](https://github.com/dotnet/maui/issues/8309)
+- [Icon Blue Border Issue](https://github.com/dotnet/maui/issues/5162)
+- [Navigation buttons appear to be disabled, but they aren't](https://github.com/dotnet/maui/issues/8309)
  
 ---
 
@@ -143,6 +142,7 @@ I intend to do everything in this list, however, depending on my schedule, I may
 - ❌ Add the ability to check for updates to the application
 - ❌ Save settings to a file if requested
 - ❌ Create splashscreen with instructions on first launch
+- ❌ Change styling of application
 
 ---
 
