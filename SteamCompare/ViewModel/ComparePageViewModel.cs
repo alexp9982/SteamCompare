@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using SteamCompare.Classes;
 
 namespace SteamCompare.ViewModel;
-
-[QueryProperty(nameof(Apikey), "Apikey")]
 
 public partial class ComparePageViewModel : ObservableObject
 {
@@ -17,19 +11,20 @@ public partial class ComparePageViewModel : ObservableObject
 
     [ObservableProperty]
     string user2;
-
-    [ObservableProperty]
-    string apikey;
-
-    //$"{nameof(ListPage)}?User1={user1}?User2={user2}"
+    
     [RelayCommand]
-    async Task Navigate() => await Shell.Current.GoToAsync(nameof(ListPage), true, new Dictionary<string, object>
+    async Task Navigate()
     {
-        {"User1", user1},
-        {"User2", user2},
-        {"Apikey", apikey}
-    });
+        DataHolder.User1 = User1;
+        DataHolder.User2 = User2;
+        await Shell.Current.GoToAsync(nameof(ListPage), true);
+    }
 
     [RelayCommand]
-    async Task Settings() => await Shell.Current.GoToAsync(nameof(SettingsPage));
+    async Task Settings()
+    {
+        DataHolder.User1 = User1;
+        DataHolder.User2 = User2;
+        await Shell.Current.GoToAsync(nameof(SettingsPage));
+    }
 }

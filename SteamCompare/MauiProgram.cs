@@ -37,7 +37,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<ListPage>();
 		builder.Services.AddTransient<ListPageViewModel>();
 
-        SettingsHolder.NotificationsEnabled = false;
+        DataHolder.NotificationsEnabled = false;
 
 		return builder.Build();
 	}

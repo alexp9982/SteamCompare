@@ -31,6 +31,7 @@ At this time, MAUI is still very buggy. A big example of that is the fact I can'
 Known issues I can't fix (these are issues based around MAUI or another Microsoft owned repo):
 - [Icon Blue Border Issue](https://github.com/dotnet/maui/issues/5162)
 - [Navigation buttons appear to be disabled, but they aren't](https://github.com/dotnet/maui/issues/8309)
+- [Three dot icon that does nothing, next to settings icon](https://github.com/dotnet/maui/issues/815)
  
 ---
 
@@ -143,6 +144,7 @@ I intend to do everything in this list, however, depending on my schedule, I may
 - ❌ Save settings to a file if requested
 - ❌ Create splashscreen with instructions on first launch
 - ❌ Change styling of application
+- ❌ Write workflows (GitHub Actions) to build and draft releases
 
 ---
 

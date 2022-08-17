@@ -8,33 +8,19 @@ using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Steam.Models.SteamCommunity;
+using SteamCompare.Classes;
 using SteamWebAPI2.Interfaces;
 using SteamWebAPI2.Utilities;
 
 namespace SteamCompare.ViewModel;
 
-[QueryProperty(nameof(User1), "User1")]
-[QueryProperty(nameof(User2), "User2")]
-[QueryProperty(nameof(Apikey), "Apikey")]
-
 public partial class ListPageViewModel : ObservableObject
 {
     [ObservableProperty]
-    string user1;
-
-    [ObservableProperty]
-    string user2;
-
-    [ObservableProperty]
     bool buttonEnabled;
-
-    [ObservableProperty] 
-    string apikey;
-
-    //Waiting for Results...
+    
     [ObservableProperty] private string statusText;
-
-    //One of the entered users is not valid! Go back and try again
+    
     [ObservableProperty] private string invalidText;
 
     [ObservableProperty]
@@ -44,11 +30,7 @@ public partial class ListPageViewModel : ObservableObject
     {
         Games = new ObservableCollection<string>();
         ButtonEnabled = true;
-        string user2actual = user2;
     }
-
-    [RelayCommand]
-    async Task Navigate() => await Shell.Current.GoToAsync(nameof(ComparePage));
 
     [RelayCommand]
     async Task Settings() => await Shell.Current.GoToAsync(nameof(SettingsPage));
@@ -66,7 +48,7 @@ public partial class ListPageViewModel : ObservableObject
         SteamWebInterfaceFactory webInterfaceFactory;
         try
         {
-            webInterfaceFactory = new SteamWebInterfaceFactory(apikey);
+            webInterfaceFactory = new SteamWebInterfaceFactory(DataHolder.ApiKey);
         }
         catch (Exception e)
         {
@@ -80,9 +62,9 @@ public partial class ListPageViewModel : ObservableObject
 
         var playerServiceInterface = webInterfaceFactory.CreateSteamWebInterface<PlayerService>(new HttpClient());
         var steamUserInterface = webInterfaceFactory.CreateSteamWebInterface<SteamUser>(new HttpClient());
-        if (user1.Length == 17 && user1.All(char.IsDigit))
+        if (DataHolder.User1.Length == 17 && DataHolder.User1.All(char.IsDigit))
         {
-            var ownedGames = await playerServiceInterface.GetOwnedGamesAsync(Convert.ToUInt64(user1),true,true);
+            var ownedGames = await playerServiceInterface.GetOwnedGamesAsync(Convert.ToUInt64(DataHolder.User1),true,true);
             if (ownedGames.Data.GameCount == 0)
             {
                 StatusText = "";
@@ -100,7 +82,7 @@ public partial class ListPageViewModel : ObservableObject
             ISteamWebResponse<OwnedGamesResultModel> ownedGames;
             try
             {
-                var user1ID = await steamUserInterface.ResolveVanityUrlAsync(user1);
+                var user1ID = await steamUserInterface.ResolveVanityUrlAsync(DataHolder.User1);
                 ownedGames = await playerServiceInterface.GetOwnedGamesAsync(user1ID.Data,true,true);
             }
             catch (Exception e)
@@ -123,9 +105,9 @@ public partial class ListPageViewModel : ObservableObject
                 user1Games.Add(ownedGame.Name);
             }
         }
-        if (user2.Length == 17 && user2.All(char.IsDigit))
+        if (DataHolder.User2.Length == 17 && DataHolder.User2.All(char.IsDigit))
         {
-            var ownedGames = await playerServiceInterface.GetOwnedGamesAsync(Convert.ToUInt64(user2),true,true);
+            var ownedGames = await playerServiceInterface.GetOwnedGamesAsync(Convert.ToUInt64(DataHolder.User2),true,true);
             if (ownedGames.Data.GameCount == 0)
             {
                 StatusText = "";
@@ -143,7 +125,7 @@ public partial class ListPageViewModel : ObservableObject
             ISteamWebResponse<OwnedGamesResultModel> ownedGames;
             try
             {
-                var user2ID = await steamUserInterface.ResolveVanityUrlAsync(user2);
+                var user2ID = await steamUserInterface.ResolveVanityUrlAsync(DataHolder.User2);
                 ownedGames = await playerServiceInterface.GetOwnedGamesAsync(user2ID.Data,true,true);
             }
             catch (Exception e)

@@ -9,17 +9,8 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace SteamCompare.ViewModel;
 
-[QueryProperty(nameof(Apikey), "Apikey")]
-
 public partial class SettingsPageViewModel : ObservableObject
 {
-    [ObservableProperty]
-    string apikey;
-        
-        
     [RelayCommand]
-    async Task Navigate() => await Shell.Current.GoToAsync("..", true, new Dictionary<string, object>
-    {
-        {"Apikey", apikey}
-    });
+    async Task Navigate() => await Shell.Current.GoToAsync("..", true);
 }

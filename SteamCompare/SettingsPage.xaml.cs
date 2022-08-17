@@ -17,7 +17,7 @@ public partial class SettingsPage : ContentPage
 
     private void NotificationToggle(object sender, EventArgs e)
     {
-        if (!SettingsHolder.NotificationsEnabled)
+        if (!DataHolder.NotificationsEnabled)
         {
             try
             {
@@ -30,12 +30,12 @@ public partial class SettingsPage : ContentPage
                 Debug.WriteLine(exception);
                 return;
             }
-            SettingsHolder.NotificationsEnabled = true;
+            DataHolder.NotificationsEnabled = true;
             NotifyButton.Text = "Disable Notifications";
         }
         else
         {
-            Debug.WriteLine("Notifications is {0}", SettingsHolder.NotificationsEnabled);
+            Debug.WriteLine("Notifications is {0}", DataHolder.NotificationsEnabled);
             try
             {
                 ServiceProvider.GetService<INotificationService>()
@@ -47,7 +47,7 @@ public partial class SettingsPage : ContentPage
                 Debug.WriteLine(exception);
                 return;
             }
-            SettingsHolder.NotificationsEnabled = false;
+            DataHolder.NotificationsEnabled = false;
             NotifyButton.Text = "Enable Notifications";
         }
 

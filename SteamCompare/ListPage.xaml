@@ -32,7 +32,7 @@
                 x:Name="ResultsButton"
                 FontAttributes="Bold"
                 VerticalOptions="Center"
-                IsEnabled="{Binding ButtonEnabled}"
+                IsEnabled="True"
                 Command="{Binding GetResultsCommand}"/>
         <CollectionView Grid.Row="1"
                         Grid.ColumnSpan="2"

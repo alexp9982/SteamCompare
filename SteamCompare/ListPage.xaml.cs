@@ -8,10 +8,4 @@ public partial class ListPage : ContentPage
 		InitializeComponent();
 		BindingContext = vm;
     }
-
-    public void changeButton()
-    {
-        ResultsButton.IsEnabled= !ResultsButton.IsEnabled;
-    }
-	
 }
