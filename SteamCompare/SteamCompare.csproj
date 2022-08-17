@@ -35,6 +35,10 @@
 		<AppxPackageSigningEnabled>true</AppxPackageSigningEnabled>
 	</PropertyGroup>
 
+  <PropertyGroup Condition="$(TargetFramework.Contains('-android'))">
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+  </PropertyGroup>
+
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\scicon.png" Color="#000000" />
