@@ -6,15 +6,16 @@ using SteamWebAPI2.Interfaces;
 using SteamWebAPI2.Utilities;
 
 using System.Diagnostics;
+using ServiceProvider = SteamCompare.Classes.ServiceProvider;
 
 namespace SteamCompare;
 
 public partial class ListPage : ContentPage
 {
     public ListPage(ListPageViewModel vm)
-	{
-		InitializeComponent();
-		BindingContext = vm;
+    {
+        InitializeComponent();
+        BindingContext = vm;
         DataHolder.Games.Clear();
         GamesCollection.ItemsSource = DataHolder.Games;
         ProgressBar.IsVisible = false;
@@ -43,10 +44,12 @@ public partial class ListPage : ContentPage
         {
             Debug.WriteLine(ex);
             StatusTextLabel.Text = "";
-            InvalidTextLabel.Text = "Your API key is not valid. Ensure you followed the instructions correctly and try again";
+            InvalidTextLabel.Text =
+                "Your API key is not valid. Ensure you followed the instructions correctly and try again";
             ResultsButton.IsEnabled = true;
             return;
         }
+
         ProgressBar.ProgressTo(0.25, 500, Easing.Linear);
         StatusTextLabel.Text = "Verifying API key and users...";
 
@@ -55,7 +58,8 @@ public partial class ListPage : ContentPage
         ProgressBar.ProgressTo(0.30, 500, Easing.Linear);
         if (DataHolder.User1.Length == 17 && DataHolder.User1.All(char.IsDigit))
         {
-            var ownedGames = await playerServiceInterface.GetOwnedGamesAsync(Convert.ToUInt64(DataHolder.User1), true, true);
+            var ownedGames =
+                await playerServiceInterface.GetOwnedGamesAsync(Convert.ToUInt64(DataHolder.User1), true, true);
             if (ownedGames.Data.GameCount == 0)
             {
                 StatusTextLabel.Text = "";
@@ -63,6 +67,7 @@ public partial class ListPage : ContentPage
                 ResultsButton.IsEnabled = true;
                 return;
             }
+
             ProgressBar.ProgressTo(0.6, 500, Easing.Linear);
             foreach (var ownedGame in ownedGames.Data.OwnedGames)
             {
@@ -86,6 +91,7 @@ public partial class ListPage : ContentPage
                 Debug.WriteLine(ex);
                 return;
             }
+
             if (ownedGames.Data.GameCount == 0)
             {
                 StatusTextLabel.Text = "";
@@ -93,15 +99,18 @@ public partial class ListPage : ContentPage
                 ResultsButton.IsEnabled = true;
                 return;
             }
+
             ProgressBar.ProgressTo(0.6, 500, Easing.Linear);
             foreach (var ownedGame in ownedGames.Data.OwnedGames)
             {
                 user1Games.Add(ownedGame.Name);
             }
         }
+
         if (DataHolder.User2.Length == 17 && DataHolder.User2.All(char.IsDigit))
         {
-            var ownedGames = await playerServiceInterface.GetOwnedGamesAsync(Convert.ToUInt64(DataHolder.User2), true, true);
+            var ownedGames =
+                await playerServiceInterface.GetOwnedGamesAsync(Convert.ToUInt64(DataHolder.User2), true, true);
             if (ownedGames.Data.GameCount == 0)
             {
                 StatusTextLabel.Text = "";
@@ -109,6 +118,7 @@ public partial class ListPage : ContentPage
                 ResultsButton.IsEnabled = true;
                 return;
             }
+
             ProgressBar.ProgressTo(0.9, 500, Easing.Linear);
             foreach (var ownedGame in ownedGames.Data.OwnedGames)
             {
@@ -132,6 +142,7 @@ public partial class ListPage : ContentPage
                 Debug.WriteLine(ex);
                 return;
             }
+
             if (ownedGames.Data.GameCount == 0)
             {
                 StatusTextLabel.Text = "";
@@ -139,6 +150,7 @@ public partial class ListPage : ContentPage
                 ResultsButton.IsEnabled = true;
                 return;
             }
+
             ProgressBar.ProgressTo(0.9, 500, Easing.Linear);
             foreach (var ownedGame in ownedGames.Data.OwnedGames)
             {
@@ -154,6 +166,16 @@ public partial class ListPage : ContentPage
         StatusTextLabel.Text = "Have Fun!";
         ResultsButton.IsEnabled = true;
         ProgressBar.ProgressTo(1, 500, Easing.Linear);
+        if (!DataHolder.NotificationsEnabled) return;
+        try
+        {
+            ServiceProvider.GetService<INotificationService>()
+                ?.ShowNotification("Results Compiled", "Results are complete and available for viewing");
+        }
+        catch (Exception exception)
+        {
+            Debug.WriteLine(exception);
+        }
 #pragma warning restore CS4014
     }
 }
