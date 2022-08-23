@@ -47,6 +47,16 @@ public partial class ListPage : ContentPage
             InvalidTextLabel.Text =
                 "Your API key is not valid. Ensure you followed the instructions correctly and try again";
             ResultsButton.IsEnabled = true;
+            if (!DataHolder.NotificationsEnabled) return;
+            try
+            {
+                ServiceProvider.GetService<INotificationService>()
+                    ?.ShowNotification("Results Failed", "Results failed to compile due to an error, view the text next to the Get Results button");
+            }
+            catch (Exception exception)
+            {
+                Debug.WriteLine(exception);
+            }
             return;
         }
 
@@ -65,6 +75,16 @@ public partial class ListPage : ContentPage
                 StatusTextLabel.Text = "";
                 InvalidTextLabel.Text = "User 1 is not valid or has no games, ensure User 1 is correct and try again";
                 ResultsButton.IsEnabled = true;
+                if (!DataHolder.NotificationsEnabled) return;
+                try
+                {
+                    ServiceProvider.GetService<INotificationService>()
+                        ?.ShowNotification("Results Failed", "Results failed to compile due to an error, view the text next to the Get Results button");
+                }
+                catch (Exception exception)
+                {
+                    Debug.WriteLine(exception);
+                }
                 return;
             }
 
@@ -89,6 +109,16 @@ public partial class ListPage : ContentPage
                 InvalidTextLabel.Text = "User 1 is not valid, ensure User 1 is correct and try again";
                 ResultsButton.IsEnabled = true;
                 Debug.WriteLine(ex);
+                if (!DataHolder.NotificationsEnabled) return;
+                try
+                {
+                    ServiceProvider.GetService<INotificationService>()
+                        ?.ShowNotification("Results Failed", "Results failed to compile due to an error, view the text next to the Get Results button");
+                }
+                catch (Exception exception)
+                {
+                    Debug.WriteLine(exception);
+                }
                 return;
             }
 
@@ -97,6 +127,16 @@ public partial class ListPage : ContentPage
                 StatusTextLabel.Text = "";
                 InvalidTextLabel.Text = "User 1 has no games, ensure User 1 is correct and try again";
                 ResultsButton.IsEnabled = true;
+                if (!DataHolder.NotificationsEnabled) return;
+                try
+                {
+                    ServiceProvider.GetService<INotificationService>()
+                        ?.ShowNotification("Results Failed", "Results failed to compile due to an error, view the text next to the Get Results button");
+                }
+                catch (Exception exception)
+                {
+                    Debug.WriteLine(exception);
+                }
                 return;
             }
 
@@ -116,6 +156,16 @@ public partial class ListPage : ContentPage
                 StatusTextLabel.Text = "";
                 InvalidTextLabel.Text = "User 2 is not valid or has no games, ensure User 2 is correct and try again";
                 ResultsButton.IsEnabled = true;
+                if (!DataHolder.NotificationsEnabled) return;
+                try
+                {
+                    ServiceProvider.GetService<INotificationService>()
+                        ?.ShowNotification("Results Failed", "Results failed to compile due to an error, view the text next to the Get Results button");
+                }
+                catch (Exception exception)
+                {
+                    Debug.WriteLine(exception);
+                }
                 return;
             }
 
@@ -140,6 +190,16 @@ public partial class ListPage : ContentPage
                 InvalidTextLabel.Text = "User 2 is not valid, ensure User 2 is correct and try again";
                 ResultsButton.IsEnabled = true;
                 Debug.WriteLine(ex);
+                if (!DataHolder.NotificationsEnabled) return;
+                try
+                {
+                    ServiceProvider.GetService<INotificationService>()
+                        ?.ShowNotification("Results Failed", "Results failed to compile due to an error, view the text next to the Get Results button");
+                }
+                catch (Exception exception)
+                {
+                    Debug.WriteLine(exception);
+                }
                 return;
             }
 
@@ -148,6 +208,16 @@ public partial class ListPage : ContentPage
                 StatusTextLabel.Text = "";
                 InvalidTextLabel.Text = "User 2 has no games, ensure User 2 is correct and try again";
                 ResultsButton.IsEnabled = true;
+                if (!DataHolder.NotificationsEnabled) return;
+                try
+                {
+                    ServiceProvider.GetService<INotificationService>()
+                        ?.ShowNotification("Results Failed", "Results failed to compile due to an error, view the text next to the Get Results button");
+                }
+                catch (Exception exception)
+                {
+                    Debug.WriteLine(exception);
+                }
                 return;
             }
 
