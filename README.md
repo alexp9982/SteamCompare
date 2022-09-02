@@ -136,7 +136,7 @@ I intend to do everything in this list, however, depending on my schedule, I may
 - ❌ Make iOS versions of the program (won't be in app store, will have to be sideloaded)
 - ❌ Ensure ARM compatibility
 - ✅ Rewrite code to save data in classes (Expected in v1.2)
-- 🟨 Make a settings page; this will allow notifications, color changing, anything else I can think of (expected in v1.2)
+- 🟨 Make a settings page; this will allow notifications, color changing, anything else I can think of (color changing coming in the future)
 - ❌ Make info page, which shows debug information, and other info regarding the application
 - ✅ Create progress bar when getting results, which will help users understand the progress on slower computers and internet (and look cool) (expected in v1.2)
 - ❌ Ensure window titles are correct on both Windows and macOS
