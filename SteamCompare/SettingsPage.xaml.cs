@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using SteamCompare.Classes;
 using SteamCompare.ViewModel;
 using ServiceProvider = SteamCompare.Classes.ServiceProvider;
@@ -13,6 +14,7 @@ public partial class SettingsPage : ContentPage
         BindingContext = vm;
         if (!OperatingSystem.IsMacCatalyst() && !OperatingSystem.IsWindows())
             NotifyButton.IsEnabled = false;
+        //BlackButton.IsChecked = true;
     }
 
     private void NotificationToggle(object sender, EventArgs e)
@@ -52,4 +54,15 @@ public partial class SettingsPage : ContentPage
         }
 
     }
+
+    // public void ChangeColor(object sender, CheckedChangedEventArgs e)
+    // {
+    //     if (RedButton.IsChecked == true)
+    //     {
+    //         App.Current.Resources["Primary"] = "#aa2e25";
+    //         App.Current.Resources["Secondary"] = "#f44336";
+    //         App.Current.Resources["Tertiary"] = "#aa2e25";
+    //         Debug.WriteLine(App.Current.Resources["Primary"]);
+    //     }
+    // }
 }

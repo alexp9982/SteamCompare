@@ -10,14 +10,83 @@
             Spacing="10">
             <Label
                 x:Name="ErrorText"
-                TextColor="Red"
+                TextColor="#f44336"
                 Text=""/>
             <Button
                 x:Name="NotifyButton"
                 Text="Enable Notifications"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center"
-                Clicked="NotificationToggle"/>
+                Clicked="NotificationToggle"
+                Margin="20"/>
+            <!--<Label Text="Color Scheme"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Margin="20"
+                   FontSize="20">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Color Scheme"
+                              TextColor="{AppThemeBinding Default=White, Light=Black, Dark=White}"
+                              FontAttributes="Bold"
+                              TextDecorations="Underline"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>-->
+            <!--<StackLayout
+                x:Name="ColorButtons"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                RadioButtonGroup.GroupName="colors">
+                <RadioButton Value="Black"
+                             x:Name="BlackButton"
+                             CheckedChanged="ChangeColor" >
+                    <RadioButton.Content>
+                        <Label Text="Black/White and Purple"
+                               TextColor="{AppThemeBinding Default=White, Light=Black, Dark=White}"/>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton Value="Red"
+                             x:Name="RedButton"
+                             CheckedChanged="ChangeColor" >
+                    <RadioButton.Content>
+                        <Label Text="Red"
+                               TextColor="{AppThemeBinding Default=White, Light=Black, Dark=White}"/>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton Value="Orange"
+                             x:Name="OrangeButton"
+                             CheckedChanged="ChangeColor" >
+                    <RadioButton.Content>
+                        <Label Text="Orange"
+                               TextColor="{AppThemeBinding Default=White, Light=Black, Dark=White}"/>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton Value="Green"
+                             x:Name="GreenButton"
+                             CheckedChanged="ChangeColor" >
+                    <RadioButton.Content>
+                        <Label Text="Green"
+                               TextColor="{AppThemeBinding Default=White, Light=Black, Dark=White}"/>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton Value="Blue"
+                             x:Name="BlueButton"
+                             CheckedChanged="ChangeColor" >
+                    <RadioButton.Content>
+                        <Label Text="Blue"
+                               TextColor="{AppThemeBinding Default=White, Light=Black, Dark=White}"/>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton Value="Purple"
+                             x:Name="PurpleButton"
+                             CheckedChanged="ChangeColor" >
+                    <RadioButton.Content>
+                        <Label Text="Purple"
+                               TextColor="{AppThemeBinding Default=White, Light=Black, Dark=White}"/>
+                    </RadioButton.Content>
+                </RadioButton>
+            </StackLayout>-->
         </StackLayout>
     </ScrollView>
 </ContentPage>
