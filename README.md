@@ -131,7 +131,7 @@ I intend to do everything in this list, however, depending on my schedule, I may
 
 - ✅ Make an MSIX package while we wait for .NET MAUI to support simple .exe files
 - ❌ Make a Details screen when clicking a game on the results list. The details screen will show additional information about the game, as well as launch the game if requested.
-- ⚠️ Ensure the entire program works on a Mac | [Issue here](https://github.com/babelshift/SteamWebAPI2/issues/130)
+- ✅ Ensure the entire program works on a Mac
 - ❌ Make Android version (Possibly in Google Play store?)
 - ❌ Make iOS versions of the program (won't be in app store, will have to be sideloaded)
 - ❌ Ensure ARM compatibility
