@@ -71,7 +71,7 @@
 		<PackageReference Include="AutoMapper" Version="11.0.1" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
 		<PackageReference Include="CommunityToolkit.WinUI.Notifications" Version="7.1.2" />
-		<PackageReference Include="SteamWebAPI2" Version="4.4.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -87,6 +87,11 @@
 		<MauiXaml Update="SettingsPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Classes\Models\" />
+	  <Folder Include="Classes\WebAPI\" />
 	</ItemGroup>
 
 </Project>

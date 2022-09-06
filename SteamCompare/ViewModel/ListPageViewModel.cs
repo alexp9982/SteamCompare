@@ -7,10 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Steam.Models.SteamCommunity;
-using SteamCompare.Classes;
-using SteamWebAPI2.Interfaces;
-using SteamWebAPI2.Utilities;
 
 namespace SteamCompare.ViewModel;
 
