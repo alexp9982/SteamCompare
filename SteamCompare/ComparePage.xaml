@@ -24,7 +24,15 @@
                Grid.Column="1"
                Placeholder="Enter SteamID64 or Username"
                Text="{Binding User1}"
-               TextChanged="OnText1Changed" />
+               TextChanged="OnText1Changed">
+            <Entry.Keyboard>
+                <Keyboard x:FactoryMethod="Create">
+                    <x:Arguments>
+                        <KeyboardFlags>None</KeyboardFlags>
+                    </x:Arguments>
+                </Keyboard>
+            </Entry.Keyboard>
+        </Entry>
         <Label Text="Enter User 2 Here"
                FontSize="20"
                HorizontalOptions="Center"
@@ -35,7 +43,15 @@
                Grid.Column="1"
                Text="{Binding User2}"
                Placeholder="Enter SteamID64 or Username"
-               TextChanged="OnText2Changed" />
+               TextChanged="OnText2Changed">
+            <Entry.Keyboard>
+                <Keyboard x:FactoryMethod="Create">
+                    <x:Arguments>
+                        <KeyboardFlags>None</KeyboardFlags>
+                    </x:Arguments>
+                </Keyboard>
+            </Entry.Keyboard>
+        </Entry>
         <Button Grid.Row="7" 
                 Grid.Column="1"
                 Text="Compare!"
