@@ -1,4 +1,3 @@
-using Steam.Models.SteamCommunity;
 using SteamCompare.Classes;
 using SteamCompare.ViewModel;
 using SteamWebAPI2.Interfaces;
@@ -6,6 +5,7 @@ using SteamWebAPI2.Interfaces;
 using SteamWebAPI2.Utilities;
 
 using System.Diagnostics;
+using SteamWebAPI2.Models.SteamPlayer;
 using ServiceProvider = SteamCompare.Classes.ServiceProvider;
 
 namespace SteamCompare;
@@ -70,7 +70,7 @@ public partial class ListPage : ContentPage
         {
             var ownedGames =
                 await playerServiceInterface.GetOwnedGamesAsync(Convert.ToUInt64(DataHolder.User1), true, true);
-            if (ownedGames.Data.GameCount == 0)
+            if (ownedGames.Data.Result.GameCount == 0)
             {
                 StatusTextLabel.Text = "";
                 InvalidTextLabel.Text = "User 1 is not valid or has no games, ensure User 1 is correct and try again";
@@ -89,14 +89,14 @@ public partial class ListPage : ContentPage
             }
 
             ProgressBar.ProgressTo(0.6, 500, Easing.Linear);
-            foreach (var ownedGame in ownedGames.Data.OwnedGames)
+            foreach (var ownedGame in ownedGames.Data.Result.OwnedGames)
             {
                 user1Games.Add(ownedGame.Name);
             }
         }
         else
         {
-            ISteamWebResponse<OwnedGamesResultModel> ownedGames;
+            ISteamWebResponse<OwnedGamesResultContainer> ownedGames;
             try
             {
                 var user1ID = await steamUserInterface.ResolveVanityUrlAsync(DataHolder.User1);
@@ -122,7 +122,7 @@ public partial class ListPage : ContentPage
                 return;
             }
 
-            if (ownedGames.Data.GameCount == 0)
+            if (ownedGames.Data.Result.GameCount == 0)
             {
                 StatusTextLabel.Text = "";
                 InvalidTextLabel.Text = "User 1 has no games, ensure User 1 is correct and try again";
@@ -141,7 +141,7 @@ public partial class ListPage : ContentPage
             }
 
             ProgressBar.ProgressTo(0.6, 500, Easing.Linear);
-            foreach (var ownedGame in ownedGames.Data.OwnedGames)
+            foreach (var ownedGame in ownedGames.Data.Result.OwnedGames)
             {
                 user1Games.Add(ownedGame.Name);
             }
@@ -151,7 +151,7 @@ public partial class ListPage : ContentPage
         {
             var ownedGames =
                 await playerServiceInterface.GetOwnedGamesAsync(Convert.ToUInt64(DataHolder.User2), true, true);
-            if (ownedGames.Data.GameCount == 0)
+            if (ownedGames.Data.Result.GameCount == 0)
             {
                 StatusTextLabel.Text = "";
                 InvalidTextLabel.Text = "User 2 is not valid or has no games, ensure User 2 is correct and try again";
@@ -170,14 +170,14 @@ public partial class ListPage : ContentPage
             }
 
             ProgressBar.ProgressTo(0.9, 500, Easing.Linear);
-            foreach (var ownedGame in ownedGames.Data.OwnedGames)
+            foreach (var ownedGame in ownedGames.Data.Result.OwnedGames)
             {
                 user2Games.Add(ownedGame.Name);
             }
         }
         else
         {
-            ISteamWebResponse<OwnedGamesResultModel> ownedGames;
+            ISteamWebResponse<OwnedGamesResultContainer> ownedGames;
             try
             {
                 var user2ID = await steamUserInterface.ResolveVanityUrlAsync(DataHolder.User2);
@@ -203,7 +203,7 @@ public partial class ListPage : ContentPage
                 return;
             }
 
-            if (ownedGames.Data.GameCount == 0)
+            if (ownedGames.Data.Result.GameCount == 0)
             {
                 StatusTextLabel.Text = "";
                 InvalidTextLabel.Text = "User 2 has no games, ensure User 2 is correct and try again";
@@ -222,7 +222,7 @@ public partial class ListPage : ContentPage
             }
 
             ProgressBar.ProgressTo(0.9, 500, Easing.Linear);
-            foreach (var ownedGame in ownedGames.Data.OwnedGames)
+            foreach (var ownedGame in ownedGames.Data.Result.OwnedGames)
             {
                 user2Games.Add(ownedGame.Name);
             }
