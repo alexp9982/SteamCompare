@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SteamWebAPI2.Utilities
+namespace SteamCompare.Classes.WebAPI.Utilities
 {
     public class SteamWebResponse<T> : ISteamWebResponse<T>
     {

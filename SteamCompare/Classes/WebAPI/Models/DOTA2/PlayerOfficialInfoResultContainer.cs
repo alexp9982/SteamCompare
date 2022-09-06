@@ -1,4 +1,4 @@
-﻿namespace SteamWebAPI2.Models.DOTA2
+﻿namespace SteamCompare.Classes.WebAPI.Models.DOTA2
 {
     internal class PlayerOfficialInfoResult
     {

@@ -1,4 +1,4 @@
-﻿namespace Steam.Models
+﻿namespace SteamCompare.Classes.Models
 {
     public class GameClientResultModel
     {

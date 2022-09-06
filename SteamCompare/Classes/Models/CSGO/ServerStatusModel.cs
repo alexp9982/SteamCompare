@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Steam.Models.CSGO
+namespace SteamCompare.Classes.Models.CSGO
 {
     public class ServerStatusModel
     {

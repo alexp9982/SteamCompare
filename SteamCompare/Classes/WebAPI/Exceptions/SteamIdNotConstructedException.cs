@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SteamWebAPI2.Exceptions
+namespace SteamCompare.Classes.WebAPI.Exceptions
 {
     /// <summary>
     /// Represents an exception that has been thrown as a result of all parsing options failing to work with a given Steam ID.

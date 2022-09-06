@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Steam.Models.GameEconomy
+namespace SteamCompare.Classes.Models.GameEconomy
 {
     public class StoreDropdownDataModel
     {

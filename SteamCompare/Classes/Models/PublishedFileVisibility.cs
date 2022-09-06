@@ -1,4 +1,4 @@
-﻿namespace Steam.Models
+﻿namespace SteamCompare.Classes.Models
 {
     public enum PublishedFileVisibility : uint
     {

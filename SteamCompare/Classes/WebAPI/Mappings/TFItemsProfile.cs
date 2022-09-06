@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using AutoMapper;
-using Steam.Models.TF2;
-using SteamWebAPI2.Models.TF2;
+using SteamCompare.Classes.Models.TF2;
+using SteamCompare.Classes.WebAPI.Models.TF2;
 
-namespace SteamWebAPI2.Mappings
+namespace SteamCompare.Classes.WebAPI.Mappings
 {
     public class TFItemsProfile : Profile
     {

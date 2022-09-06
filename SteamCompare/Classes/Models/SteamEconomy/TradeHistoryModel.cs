@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Steam.Models.SteamEconomy
+namespace SteamCompare.Classes.Models.SteamEconomy
 {
     public class TradeHistoryModel
     {

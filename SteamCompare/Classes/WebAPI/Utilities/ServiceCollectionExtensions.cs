@@ -2,7 +2,7 @@ using System;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace SteamWebAPI2.Utilities
+namespace SteamCompare.Classes.WebAPI.Utilities
 { 
     public static class ServiceCollectionExtensions
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace SteamWebAPI2.Models.SteamCommunity
+namespace SteamCompare.Classes.WebAPI.Models.SteamCommunity
 {
     [DataContract(Name = "profile", Namespace = "")]
     internal class SteamCommunityProfile

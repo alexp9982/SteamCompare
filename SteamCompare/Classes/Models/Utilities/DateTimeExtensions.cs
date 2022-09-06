@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Steam.Models.Utilities
+namespace SteamCompare.Classes.Models.Utilities
 {
     public static class DateTimeExtensions
     {

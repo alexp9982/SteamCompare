@@ -1,4 +1,4 @@
-﻿namespace Steam.Models.GameEconomy
+﻿namespace SteamCompare.Classes.Models.GameEconomy
 {
     public class SchemaItemSetAttributeModel
     {

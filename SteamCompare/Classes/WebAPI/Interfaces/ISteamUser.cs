@@ -1,9 +1,9 @@
-﻿using Steam.Models.SteamCommunity;
-using SteamWebAPI2.Utilities;
+﻿using SteamCompare.Classes.Models.SteamCommunity;
+using SteamCompare.Classes.WebAPI.Utilities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SteamWebAPI2.Interfaces
+namespace SteamCompare.Classes.WebAPI.Interfaces
 {
     public interface ISteamUser
     {

@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using SteamWebAPI2.Models.SteamEconomy;
+using SteamCompare.Classes.WebAPI.Models.SteamEconomy;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace SteamWebAPI2.Utilities.JsonConverters
+namespace SteamCompare.Classes.WebAPI.Utilities.JsonConverters
 {
     /// <summary>
     /// Handles manual deserialization of the response from ISteamEconomy/GetAssetClassInfo.

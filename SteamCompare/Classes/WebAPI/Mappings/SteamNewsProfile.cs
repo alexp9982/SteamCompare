@@ -1,8 +1,8 @@
 using AutoMapper;
-using Steam.Models;
-using SteamWebAPI2.Models;
+using SteamCompare.Classes.Models;
+using SteamCompare.Classes.WebAPI.Models;
 
-namespace SteamWebAPI2.Mappings
+namespace SteamCompare.Classes.WebAPI.Mappings
 {
     public class SteamNewsProfile : Profile
     {

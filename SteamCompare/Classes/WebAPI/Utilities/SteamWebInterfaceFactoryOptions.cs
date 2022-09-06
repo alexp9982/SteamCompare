@@ -1,4 +1,4 @@
-namespace SteamWebAPI2.Utilities
+namespace SteamCompare.Classes.WebAPI.Utilities
 {
     public class SteamWebInterfaceFactoryOptions
     {

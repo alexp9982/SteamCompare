@@ -1,4 +1,4 @@
-﻿namespace Steam.Models.DOTA2
+﻿namespace SteamCompare.Classes.Models.DOTA2
 {
     public class Rarity
     {

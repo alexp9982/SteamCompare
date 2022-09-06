@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SteamWebAPI2.Exceptions
+namespace SteamCompare.Classes.WebAPI.Exceptions
 {
     /// <summary>
     /// Represents an exception that has been thrown as a result of parsing a Uri that wasn't a Steam Community Uri.

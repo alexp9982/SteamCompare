@@ -2,7 +2,7 @@
 using System;
 using System.Reflection;
 
-namespace SteamWebAPI2.Utilities.JsonConverters
+namespace SteamCompare.Classes.WebAPI.Utilities.JsonConverters
 {
     internal class UnixTimeJsonConverter : JsonConverter
     {

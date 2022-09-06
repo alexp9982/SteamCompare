@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using Steam.Models.GameEconomy;
-using SteamWebAPI2.Models.GameEconomy;
-using SteamWebAPI2.Utilities;
+using SteamCompare.Classes.Models.GameEconomy;
+using SteamCompare.Classes.WebAPI.Models.GameEconomy;
+using SteamCompare.Classes.WebAPI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SteamWebAPI2.Interfaces
+namespace SteamCompare.Classes.WebAPI.Interfaces
 {
     public class EconItems : IEconItems
     {

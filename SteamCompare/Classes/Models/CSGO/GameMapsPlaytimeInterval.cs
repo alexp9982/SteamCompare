@@ -1,5 +1,5 @@
 
-namespace Steam.Models.CSGO
+namespace SteamCompare.Classes.Models.CSGO
 {
     public enum GameMapsPlaytimeInterval
     {

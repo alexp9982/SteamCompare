@@ -1,4 +1,4 @@
-﻿namespace Steam.Models.SteamEconomy
+﻿namespace SteamCompare.Classes.Models.SteamEconomy
 {
     /// <summary>
     /// Tracks the status of a trade after a trade offer has been accepted.

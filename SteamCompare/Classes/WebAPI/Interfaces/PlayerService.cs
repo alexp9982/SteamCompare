@@ -1,15 +1,15 @@
 ﻿using AutoMapper;
 using Newtonsoft.Json;
-using Steam.Models.SteamCommunity;
-using SteamWebAPI2.Models.SteamCommunity;
-using SteamWebAPI2.Models.SteamPlayer;
-using SteamWebAPI2.Utilities;
+using SteamCompare.Classes.Models.SteamCommunity;
+using SteamCompare.Classes.WebAPI.Models.SteamCommunity;
+using SteamCompare.Classes.WebAPI.Models.SteamPlayer;
+using SteamCompare.Classes.WebAPI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace SteamWebAPI2.Interfaces
+namespace SteamCompare.Classes.WebAPI.Interfaces
 {
     public class PlayerService : IPlayerService
     {

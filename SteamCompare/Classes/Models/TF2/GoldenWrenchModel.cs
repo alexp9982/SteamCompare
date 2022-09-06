@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Steam.Models.TF2
+namespace SteamCompare.Classes.Models.TF2
 {
     public class GoldenWrenchModel
     {

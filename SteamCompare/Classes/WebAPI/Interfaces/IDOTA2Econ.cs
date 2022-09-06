@@ -1,9 +1,9 @@
-﻿using Steam.Models.DOTA2;
-using SteamWebAPI2.Utilities;
+﻿using SteamCompare.Classes.Models.DOTA2;
+using SteamCompare.Classes.WebAPI.Utilities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SteamWebAPI2.Interfaces
+namespace SteamCompare.Classes.WebAPI.Interfaces
 {
     public interface IDOTA2Econ
     {

@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using SteamWebAPI2.Utilities.JsonConverters;
+using SteamCompare.Classes.WebAPI.Utilities.JsonConverters;
 
-namespace SteamWebAPI2.Models.CSGO
+namespace SteamCompare.Classes.WebAPI.Models.CSGO
 {
     public class GameMapsPlaytime
     {

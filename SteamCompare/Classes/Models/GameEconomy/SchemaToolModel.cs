@@ -1,6 +1,6 @@
-﻿using Steam.Models.DOTA2;
+﻿using SteamCompare.Classes.Models.DOTA2;
 
-namespace Steam.Models.GameEconomy
+namespace SteamCompare.Classes.Models.GameEconomy
 {
     public class SchemaToolModel
     {

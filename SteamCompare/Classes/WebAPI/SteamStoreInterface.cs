@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using SteamWebAPI2.Utilities;
+using SteamCompare.Classes.WebAPI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace SteamWebAPI2
+namespace SteamCompare.Classes.WebAPI
 {
     /// <summary>
     /// Represents an interface into the Steam Store Web API

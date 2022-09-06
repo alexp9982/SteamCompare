@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
-namespace SteamWebAPI2.Utilities
+namespace SteamCompare.Classes.WebAPI.Utilities
 {
     /// <summary>
     /// Represents a single "interface" that is exposed as part of the Valve Steam Web API. For example, an interface would be: "IDOTA2Match_570" which contains
@@ -18,7 +18,6 @@ namespace SteamWebAPI2.Utilities
         /// <summary>
         /// Default constructor requires a Steam Web API key (secret to each developer) and the name for this web interface (such as "IDOTA2Match_570).
         /// </summary>
-        /// <param name="steamWebApiKey">Steam Web API key (secret to each developer)</param>
         /// <param name="interfaceName">Name for this web interface (such as "IDOTA2Match_570). Must match the Steam Web API interface name exactly as this value
         /// is used to construct the URL to perform the GET or POST.</param>
         public SteamWebInterface(string interfaceName, ISteamWebRequest steamWebRequest)
@@ -41,7 +40,6 @@ namespace SteamWebAPI2.Utilities
         /// Default constructor requires a Steam Web API key (secret to each developer) and the name for this web interface (such as "IDOTA2Match_570).
         /// </summary>
         /// <param name="steamWebApiBaseUrl">Used to override the base URL of each web request. Default is 'https://api.steampowered.com/'.</param>
-        /// <param name="steamWebApiKey">Steam Web API key (secret to each developer)</param>
         /// <param name="interfaceName">Name for this web interface (such as "IDOTA2Match_570). Must match the Steam Web API interface name exactly as this value
         /// is used to construct the URL to perform the GET or POST.</param>
         public SteamWebInterface(string steamWebApiBaseUrl, string interfaceName, ISteamWebRequest steamWebRequest)

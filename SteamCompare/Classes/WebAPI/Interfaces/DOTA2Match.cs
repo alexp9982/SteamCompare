@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using Steam.Models.DOTA2;
-using SteamWebAPI2.Models.DOTA2;
-using SteamWebAPI2.Utilities;
+using SteamCompare.Classes.Models.DOTA2;
+using SteamCompare.Classes.WebAPI.Models.DOTA2;
+using SteamCompare.Classes.WebAPI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SteamWebAPI2.Interfaces
+namespace SteamCompare.Classes.WebAPI.Interfaces
 {
     public class DOTA2Match : IDOTA2Match
     {
@@ -16,7 +16,6 @@ namespace SteamWebAPI2.Interfaces
         /// <summary>
         /// Default constructor established the Steam Web API key and initializes for subsequent method calls
         /// </summary>
-        /// <param name="steamWebApiKey"></param>
         public DOTA2Match(IMapper mapper, ISteamWebRequest steamWebRequest, ISteamWebInterface steamWebInterface = null)
         {
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
@@ -128,7 +127,7 @@ namespace SteamWebAPI2.Interfaces
         /// <param name="startAtTeamId"></param>
         /// <param name="teamsRequested"></param>
         /// <returns></returns>
-        public async Task<ISteamWebResponse<IReadOnlyCollection<Steam.Models.DOTA2.TeamInfo>>> GetTeamInfoByTeamIdAsync(long? startAtTeamId = null, uint? teamsRequested = null)
+        public async Task<ISteamWebResponse<IReadOnlyCollection<SteamCompare.Classes.Models.DOTA2.TeamInfo>>> GetTeamInfoByTeamIdAsync(long? startAtTeamId = null, uint? teamsRequested = null)
         {
             List<SteamWebRequestParameter> parameters = new List<SteamWebRequestParameter>();
 
@@ -137,7 +136,7 @@ namespace SteamWebAPI2.Interfaces
 
             var steamWebResponse = await steamWebInterface.GetAsync<TeamInfoResultContainer>("GetTeamInfoByTeamID", 1, parameters);
 
-            var steamWebResponseModel = mapper.Map<ISteamWebResponse<TeamInfoResultContainer>, ISteamWebResponse<IReadOnlyCollection<Steam.Models.DOTA2.TeamInfo>>>(steamWebResponse);
+            var steamWebResponseModel = mapper.Map<ISteamWebResponse<TeamInfoResultContainer>, ISteamWebResponse<IReadOnlyCollection<SteamCompare.Classes.Models.DOTA2.TeamInfo>>>(steamWebResponse);
 
             return steamWebResponseModel;
         }

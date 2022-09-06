@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Steam.Models.TF2
+namespace SteamCompare.Classes.Models.TF2
 {
     public class SchemaQualitiesModel
     {

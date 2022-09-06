@@ -1,9 +1,9 @@
 ﻿using Newtonsoft.Json;
-using SteamWebAPI2.Utilities.JsonConverters;
+using SteamCompare.Classes.WebAPI.Utilities.JsonConverters;
 using System;
 using System.Collections.Generic;
 
-namespace SteamWebAPI2.Models.TF2
+namespace SteamCompare.Classes.WebAPI.Models.TF2
 {
     internal class GoldenWrench
     {

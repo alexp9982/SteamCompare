@@ -1,4 +1,4 @@
-﻿namespace SteamWebAPI2.Interfaces
+﻿namespace SteamCompare.Classes.WebAPI.Interfaces
 {
     public interface IDOTA2Ticket
     {

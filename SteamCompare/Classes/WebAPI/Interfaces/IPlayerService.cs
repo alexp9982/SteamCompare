@@ -1,10 +1,10 @@
-﻿using Steam.Models.SteamCommunity;
-using SteamWebAPI2.Utilities;
+﻿using SteamCompare.Classes.Models.SteamCommunity;
+using SteamCompare.Classes.WebAPI.Utilities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using SteamWebAPI2.Models.SteamPlayer;
+using SteamCompare.Classes.WebAPI.Models.SteamPlayer;
 
-namespace SteamWebAPI2.Interfaces
+namespace SteamCompare.Classes.WebAPI.Interfaces
 {
     public interface IPlayerService
     {

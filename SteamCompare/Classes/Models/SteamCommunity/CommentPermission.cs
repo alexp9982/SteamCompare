@@ -1,4 +1,4 @@
-﻿namespace Steam.Models.SteamCommunity
+﻿namespace SteamCompare.Classes.Models.SteamCommunity
 {
     /// <summary>
     /// Indicates the selected privacy/visibility level of the player's comments section on their Steam Community profile

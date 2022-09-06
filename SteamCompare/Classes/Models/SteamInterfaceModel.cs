@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Steam.Models
+namespace SteamCompare.Classes.Models
 {
     public class SteamInterfaceModel
     {

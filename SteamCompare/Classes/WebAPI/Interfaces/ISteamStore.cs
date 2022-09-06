@@ -1,7 +1,7 @@
-﻿using Steam.Models.SteamStore;
+﻿using SteamCompare.Classes.Models.SteamStore;
 using System.Threading.Tasks;
 
-namespace SteamWebAPI2.Interfaces
+namespace SteamCompare.Classes.WebAPI.Interfaces
 {
     internal interface ISteamStore
     {

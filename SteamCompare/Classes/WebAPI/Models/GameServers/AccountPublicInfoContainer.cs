@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace SteamWebAPI2.Models.GameServers
+namespace SteamCompare.Classes.WebAPI.Models.GameServers
 {
     public class AccountPublicInfoContainer
     {

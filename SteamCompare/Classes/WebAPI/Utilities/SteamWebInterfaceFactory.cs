@@ -1,11 +1,11 @@
 using AutoMapper;
 using Microsoft.Extensions.Options;
-using SteamWebAPI2.Interfaces;
-using SteamWebAPI2.Mappings;
+using SteamCompare.Classes.WebAPI.Interfaces;
+using SteamCompare.Classes.WebAPI.Mappings;
 using System;
 using System.Net.Http;
 
-namespace SteamWebAPI2.Utilities
+namespace SteamCompare.Classes.WebAPI.Utilities
 {
     public class SteamWebInterfaceFactory : ISteamWebInterfaceFactory
     {
@@ -28,8 +28,6 @@ namespace SteamWebAPI2.Utilities
         /// <summary>
         /// Factory to create web interface objects to communicate with Steam Web API
         /// </summary>
-        /// <param name="steamWebApiKey">Unique Steam Web API key issued to you (do not share this with anyone!)</param>
-        /// <param name="steamWebApiBaseUrl">Base URL of the Steam Web API (optional)</param>
         public SteamWebInterfaceFactory(IOptions<SteamWebInterfaceFactoryOptions> options)
         {
             if (options == null)

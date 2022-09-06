@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using Steam.Models;
-using SteamWebAPI2.Utilities.JsonConverters;
+using SteamCompare.Classes.Models;
+using SteamCompare.Classes.WebAPI.Utilities.JsonConverters;
 
-namespace SteamWebAPI2.Models
+namespace SteamCompare.Classes.WebAPI.Models
 {
     internal class PublishedFileDetailsResultContainer
     {

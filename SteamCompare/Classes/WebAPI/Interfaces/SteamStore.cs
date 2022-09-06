@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using Steam.Models.SteamStore;
-using SteamWebAPI2.Models.SteamStore;
-using SteamWebAPI2.Utilities;
+using SteamCompare.Classes.Models.SteamStore;
+using SteamCompare.Classes.WebAPI.Models.SteamStore;
+using SteamCompare.Classes.WebAPI.Utilities;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace SteamWebAPI2.Interfaces
+namespace SteamCompare.Classes.WebAPI.Interfaces
 {
     public class SteamStore : SteamStoreInterface, ISteamStore
     {

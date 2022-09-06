@@ -1,15 +1,14 @@
 ﻿using Newtonsoft.Json;
-using Steam.Models.SteamCommunity;
-using SteamWebAPI2.Utilities.JsonConverters;
+using SteamCompare.Classes.Models.SteamCommunity;
+using SteamCompare.Classes.WebAPI.Utilities.JsonConverters;
 using System;
 using System.Collections.Generic;
 
-namespace SteamWebAPI2.Models.SteamCommunity
+namespace SteamCompare.Classes.WebAPI.Models.SteamCommunity
 {
     /// <summary>
     /// Represents a single player summary from ISteamUser/GetPlayerSummaries interface/method. Not every field will be populated
     /// depending on the user's privacy choices or omission of data completely.
-    /// </summary>
     /// </summary>
     internal class PlayerSummary
     {

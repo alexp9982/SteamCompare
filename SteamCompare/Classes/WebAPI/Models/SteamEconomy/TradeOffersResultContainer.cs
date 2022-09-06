@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace SteamWebAPI2.Models.SteamEconomy
+namespace SteamCompare.Classes.WebAPI.Models.SteamEconomy
 {
     internal class TradeOffersResult
     {

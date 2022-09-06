@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using SteamWebAPI2.Utilities;
+using SteamCompare.Classes.WebAPI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Steam.Models.SteamUserAuth;
+using SteamCompare.Classes.Models.SteamUserAuth;
 
-namespace SteamWebAPI2.Interfaces
+namespace SteamCompare.Classes.WebAPI.Interfaces
 {
     public class SteamUserAuth : ISteamUserAuth
     {

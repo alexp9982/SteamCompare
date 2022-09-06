@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using Steam.Models.GameServers;
-using SteamWebAPI2.Models.GameServers;
-using SteamWebAPI2.Utilities;
+using SteamCompare.Classes.Models.GameServers;
+using SteamCompare.Classes.WebAPI.Models.GameServers;
+using SteamCompare.Classes.WebAPI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SteamWebAPI2.Interfaces
+namespace SteamCompare.Classes.WebAPI.Interfaces
 {
     public class GameServersService : IGameServersService
     {

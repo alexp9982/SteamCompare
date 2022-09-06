@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace SteamWebAPI2.Models.SteamCommunity
+namespace SteamCompare.Classes.WebAPI.Models.SteamCommunity
 {
     internal class BadgeQuest
     {

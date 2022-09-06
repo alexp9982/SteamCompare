@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Steam.Models.SteamCommunity
+namespace SteamCompare.Classes.Models.SteamCommunity
 {
     public class FriendModel
     {

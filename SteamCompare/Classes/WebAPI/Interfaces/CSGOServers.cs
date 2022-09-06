@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using Steam.Models.CSGO;
-using SteamWebAPI2.Models.CSGO;
-using SteamWebAPI2.Utilities;
+using SteamCompare.Classes.Models.CSGO;
+using SteamCompare.Classes.WebAPI.Models.CSGO;
+using SteamCompare.Classes.WebAPI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SteamWebAPI2.Interfaces
+namespace SteamCompare.Classes.WebAPI.Interfaces
 {
     /// <summary>
     /// Represents a Steam Web API interface endpoint located at ICSGOServers_730
@@ -19,7 +19,6 @@ namespace SteamWebAPI2.Interfaces
         /// <summary>
         /// Default constructor established the Steam Web API key and initializes for subsequent method calls
         /// </summary>
-        /// <param name="steamWebApiKey"></param>
         public CSGOServers(IMapper mapper, ISteamWebRequest steamWebRequest, ISteamWebInterface steamWebInterface = null)
         {
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));

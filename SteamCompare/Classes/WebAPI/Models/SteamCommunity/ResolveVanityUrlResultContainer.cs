@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace SteamWebAPI2.Models.SteamCommunity
+namespace SteamCompare.Classes.WebAPI.Models.SteamCommunity
 {
     internal class ResolveVanityUrlResult
     {

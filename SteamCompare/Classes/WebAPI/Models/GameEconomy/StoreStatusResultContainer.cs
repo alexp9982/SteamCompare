@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace SteamWebAPI2.Models.GameEconomy
+namespace SteamCompare.Classes.WebAPI.Models.GameEconomy
 {
     internal class StoreStatusResult
     {

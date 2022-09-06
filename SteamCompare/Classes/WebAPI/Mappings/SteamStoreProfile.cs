@@ -1,10 +1,10 @@
 
 using AutoMapper;
-using Steam.Models.SteamStore;
-using SteamWebAPI2.Models.SteamStore;
-using Screenshot = SteamWebAPI2.Models.SteamStore.Screenshot;
+using SteamCompare.Classes.Models.SteamStore;
+using SteamCompare.Classes.WebAPI.Models.SteamStore;
+using Screenshot = SteamCompare.Classes.WebAPI.Models.SteamStore.Screenshot;
 
-namespace SteamWebAPI2.Mappings
+namespace SteamCompare.Classes.WebAPI.Mappings
 {
     public class SteamStoreProfile : Profile
     {

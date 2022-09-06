@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Steam.Models.SteamStore
+namespace SteamCompare.Classes.Models.SteamStore
 {
     public class StoreSpecialsModel
     {

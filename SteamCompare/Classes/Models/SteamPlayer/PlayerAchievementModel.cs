@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Steam.Models.SteamPlayer
+namespace SteamCompare.Classes.Models.SteamPlayer
 {
     public class PlayerAchievementModel
     {

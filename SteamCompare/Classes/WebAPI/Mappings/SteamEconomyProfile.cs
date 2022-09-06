@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 using AutoMapper;
-using Steam.Models.CSGO;
-using Steam.Models.GameEconomy;
-using Steam.Models.SteamEconomy;
-using SteamWebAPI2.Models.CSGO;
-using SteamWebAPI2.Models.GameEconomy;
-using SteamWebAPI2.Models.SteamEconomy;
-using SteamWebAPI2.Utilities;
+using SteamCompare.Classes.Models.CSGO;
+using SteamCompare.Classes.Models.GameEconomy;
+using SteamCompare.Classes.Models.SteamEconomy;
+using SteamCompare.Classes.WebAPI.Models.CSGO;
+using SteamCompare.Classes.WebAPI.Models.GameEconomy;
+using SteamCompare.Classes.WebAPI.Models.SteamEconomy;
+using SteamCompare.Classes.WebAPI.Utilities;
 
-namespace SteamWebAPI2.Mappings
+namespace SteamCompare.Classes.WebAPI.Mappings
 {
     public class SteamEconomyProfile : Profile
     {

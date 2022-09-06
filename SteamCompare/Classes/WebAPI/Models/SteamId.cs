@@ -1,12 +1,12 @@
-﻿using SteamWebAPI2.Exceptions;
-using SteamWebAPI2.Interfaces;
-using SteamWebAPI2.Utilities;
+﻿using SteamCompare.Classes.WebAPI.Exceptions;
+using SteamCompare.Classes.WebAPI.Interfaces;
+using SteamCompare.Classes.WebAPI.Utilities;
 using System;
 using System.Runtime.ExceptionServices;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace SteamWebAPI2.Models
+namespace SteamCompare.Classes.WebAPI.Models
 {
     #region Enum Types
 
@@ -189,7 +189,6 @@ namespace SteamWebAPI2.Models
         /// asynchronously resolve the Steam Id information. This is typically used when you only know the users vanity URL name or don't know what type of Steam Id
         /// you have on hand.
         /// </summary>
-        /// <param name="steamWebRequest">Required in the event that the Steam Web API is needed to resolve a Profile URL to a 64-bit Steam ID.</param>
         public SteamId(ISteamUser steamUser)
         {
             this.steamUser = steamUser;

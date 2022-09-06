@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Steam.Models.DOTA2
+namespace SteamCompare.Classes.Models.DOTA2
 {
     public class MatchHistoryBySequenceNumberMatchModel
     {

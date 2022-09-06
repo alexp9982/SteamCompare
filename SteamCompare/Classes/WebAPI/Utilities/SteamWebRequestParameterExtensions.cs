@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SteamWebAPI2.Utilities
+namespace SteamCompare.Classes.WebAPI.Utilities
 {
     internal static class SteamWebRequestParameterExtensions
     {

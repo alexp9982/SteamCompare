@@ -1,4 +1,4 @@
-﻿namespace Steam.Models.SteamEconomy
+﻿namespace SteamCompare.Classes.Models.SteamEconomy
 {
     /// <summary>
     /// These are the different states for a trade offer.

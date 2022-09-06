@@ -1,4 +1,4 @@
-﻿namespace Steam.Models.SteamUserAuth
+﻿namespace SteamCompare.Classes.Models.SteamUserAuth
 {
     public class SteamAuthError
     {

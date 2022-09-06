@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SteamWebAPI2.Utilities
+namespace SteamCompare.Classes.WebAPI.Utilities
 {
     /// <summary>
     /// Represents a single parameter to be included in a web API request. Each parameter must have a name and a value, both of which will be serialized to

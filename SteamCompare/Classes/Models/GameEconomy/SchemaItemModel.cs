@@ -1,8 +1,8 @@
-﻿using Steam.Models.DOTA2;
+﻿using SteamCompare.Classes.Models.DOTA2;
 using System;
 using System.Collections.Generic;
 
-namespace Steam.Models.GameEconomy
+namespace SteamCompare.Classes.Models.GameEconomy
 {
     public class SchemaItemModel
     {

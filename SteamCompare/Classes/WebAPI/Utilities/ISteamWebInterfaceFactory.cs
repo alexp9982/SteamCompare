@@ -1,7 +1,7 @@
 using System.Net.Http;
-using SteamWebAPI2.Interfaces;
+using SteamCompare.Classes.WebAPI.Interfaces;
 
-namespace SteamWebAPI2.Utilities
+namespace SteamCompare.Classes.WebAPI.Utilities
 {
     public interface ISteamWebInterfaceFactory
     {

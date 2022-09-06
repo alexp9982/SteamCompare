@@ -1,8 +1,8 @@
-﻿using Steam.Models.CSGO;
-using SteamWebAPI2.Utilities;
+﻿using SteamCompare.Classes.Models.CSGO;
+using SteamCompare.Classes.WebAPI.Utilities;
 using System.Threading.Tasks;
 
-namespace SteamWebAPI2.Interfaces
+namespace SteamCompare.Classes.WebAPI.Interfaces
 {
     public interface ICSGOServers
     {

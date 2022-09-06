@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using SteamWebAPI2.Models.SteamStore;
+using SteamCompare.Classes.WebAPI.Models.SteamStore;
 using System;
 using System.Reflection;
 
-namespace SteamWebAPI2.Utilities.JsonConverters
+namespace SteamCompare.Classes.WebAPI.Utilities.JsonConverters
 {
     /// <summary>
     /// Take some special steps when deserializing the AppDetails response since the response has a dynamic property based on the app id which is passed as a parameter.

@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using SteamWebAPI2.Models.DOTA2;
+using SteamCompare.Classes.WebAPI.Models.DOTA2;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace SteamWebAPI2.Utilities.JsonConverters
+namespace SteamCompare.Classes.WebAPI.Utilities.JsonConverters
 {
     internal class TeamInfoJsonConverter : JsonConverter
     {

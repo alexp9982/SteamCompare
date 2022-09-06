@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Steam.Models.SteamCommunity
+namespace SteamCompare.Classes.Models.SteamCommunity
 {
     public class OwnedGamesResultModel
     {

@@ -1,18 +1,18 @@
 using System;
 using AutoMapper;
-using Steam.Models.SteamEconomy;
-using SteamWebAPI2.Models.SteamEconomy;
-using SteamWebAPI2.Utilities;
+using SteamCompare.Classes.Models.SteamEconomy;
+using SteamCompare.Classes.WebAPI.Models.SteamEconomy;
+using SteamCompare.Classes.WebAPI.Utilities;
 
-namespace SteamWebAPI2.Mappings
+namespace SteamCompare.Classes.WebAPI.Mappings
 {
     public class EconServiceProfile : Profile
     {
         public EconServiceProfile()
         {
-            CreateMap<Steam.Models.SteamEconomy.TradeStatus, Steam.Models.SteamEconomy.TradeStatus>();
-            CreateMap<Steam.Models.SteamEconomy.TradeOfferState, Steam.Models.SteamEconomy.TradeOfferState>();
-            CreateMap<Steam.Models.SteamEconomy.TradeOfferConfirmationMethod, Steam.Models.SteamEconomy.TradeOfferConfirmationMethod>();
+            CreateMap<SteamCompare.Classes.Models.SteamEconomy.TradeStatus, SteamCompare.Classes.Models.SteamEconomy.TradeStatus>();
+            CreateMap<SteamCompare.Classes.Models.SteamEconomy.TradeOfferState, SteamCompare.Classes.Models.SteamEconomy.TradeOfferState>();
+            CreateMap<SteamCompare.Classes.Models.SteamEconomy.TradeOfferConfirmationMethod, SteamCompare.Classes.Models.SteamEconomy.TradeOfferConfirmationMethod>();
             CreateMap<TradeAsset, TradeAssetModel>();
             CreateMap<TradedAsset, TradedAssetModel>();
             CreateMap<TradedCurrency, TradedCurrencyModel>();

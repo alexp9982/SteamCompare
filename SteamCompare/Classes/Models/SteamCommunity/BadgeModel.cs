@@ -1,4 +1,4 @@
-﻿namespace Steam.Models.SteamCommunity
+﻿namespace SteamCompare.Classes.Models.SteamCommunity
 {
     public class BadgeModel
     {

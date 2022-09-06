@@ -1,9 +1,9 @@
 using System;
 using AutoMapper;
-using Steam.Models.SteamCommunity;
-using SteamWebAPI2.Models.SteamCommunity;
+using SteamCompare.Classes.Models.SteamCommunity;
+using SteamCompare.Classes.WebAPI.Models.SteamCommunity;
 
-namespace SteamWebAPI2.Mappings
+namespace SteamCompare.Classes.WebAPI.Mappings
 {
     public class SteamProfileProfile : Profile
     {

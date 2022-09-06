@@ -1,8 +1,8 @@
 ﻿using System;
 using AutoMapper;
-using SteamWebAPI2.Utilities;
+using SteamCompare.Classes.WebAPI.Utilities;
 
-namespace SteamWebAPI2.Interfaces
+namespace SteamCompare.Classes.WebAPI.Interfaces
 {
     public class DOTA2Ticket : IDOTA2Ticket
     {

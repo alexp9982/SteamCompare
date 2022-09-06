@@ -1,8 +1,8 @@
 using AutoMapper;
-using Steam.Models.DOTA2;
-using SteamWebAPI2.Models.DOTA2;
+using SteamCompare.Classes.Models.DOTA2;
+using SteamCompare.Classes.WebAPI.Models.DOTA2;
 
-namespace SteamWebAPI2.Mappings
+namespace SteamCompare.Classes.WebAPI.Mappings
 {
     public class DOTA2FantasyProfile : Profile
     {

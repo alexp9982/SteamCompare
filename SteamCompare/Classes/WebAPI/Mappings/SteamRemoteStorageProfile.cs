@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using AutoMapper;
-using Steam.Models;
-using SteamWebAPI2.Models;
+using SteamCompare.Classes.Models;
+using SteamCompare.Classes.WebAPI.Models;
 using System.Linq;
 using System;
 
-namespace SteamWebAPI2.Mappings
+namespace SteamCompare.Classes.WebAPI.Mappings
 {
     public class SteamRemoteStorageProfile : Profile
     {

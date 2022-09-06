@@ -1,4 +1,4 @@
-﻿namespace Steam.Models.SteamPlayer
+﻿namespace SteamCompare.Classes.Models.SteamPlayer
 {
     public class UserStatAchievementModel
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Steam.Models.CSGO
+namespace SteamCompare.Classes.Models.CSGO
 {
     public class GameMapsPlaytimeModel
     {

@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace SteamWebAPI2.Models.GameEconomy
+namespace SteamCompare.Classes.WebAPI.Models.GameEconomy
 {
     public class SchemaOverviewResult
     {

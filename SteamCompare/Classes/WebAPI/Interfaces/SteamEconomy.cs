@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using Steam.Models.SteamEconomy;
-using SteamWebAPI2.Models.SteamEconomy;
-using SteamWebAPI2.Utilities;
+using SteamCompare.Classes.Models.SteamEconomy;
+using SteamCompare.Classes.WebAPI.Models.SteamEconomy;
+using SteamCompare.Classes.WebAPI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SteamWebAPI2.Interfaces
+namespace SteamCompare.Classes.WebAPI.Interfaces
 {
     public class SteamEconomy : ISteamEconomy
     {
@@ -16,7 +16,6 @@ namespace SteamWebAPI2.Interfaces
         /// <summary>
         /// Default constructor established the Steam Web API key and initializes for subsequent method calls
         /// </summary>
-        /// <param name="steamWebApiKey"></param>
         public SteamEconomy(IMapper mapper, ISteamWebRequest steamWebRequest, ISteamWebInterface steamWebInterface = null)
         {
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));

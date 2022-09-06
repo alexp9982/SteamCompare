@@ -1,11 +1,11 @@
 using SteamCompare.Classes;
 using SteamCompare.ViewModel;
-using SteamWebAPI2.Interfaces;
+using SteamCompare.Classes.WebAPI.Interfaces;
 
-using SteamWebAPI2.Utilities;
+using SteamCompare.Classes.WebAPI.Utilities;
 
 using System.Diagnostics;
-using SteamWebAPI2.Models.SteamPlayer;
+using SteamCompare.Classes.WebAPI.Models.SteamPlayer;
 using ServiceProvider = SteamCompare.Classes.ServiceProvider;
 
 namespace SteamCompare;

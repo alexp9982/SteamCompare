@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace SteamWebAPI2.Models
+namespace SteamCompare.Classes.WebAPI.Models
 {
     internal class SteamAppUpToDateCheckResult
     {

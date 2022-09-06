@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using Steam.Models.TF2;
-using SteamWebAPI2.Models.TF2;
-using SteamWebAPI2.Utilities;
+using SteamCompare.Classes.Models.TF2;
+using SteamCompare.Classes.WebAPI.Models.TF2;
+using SteamCompare.Classes.WebAPI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SteamWebAPI2.Interfaces
+namespace SteamCompare.Classes.WebAPI.Interfaces
 {
     public class TFItems : ITFItems
     {

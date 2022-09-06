@@ -1,36 +1,36 @@
 using System.Collections.Generic;
 using AutoMapper;
-using Steam.Models;
-using Steam.Models.CSGO;
-using Steam.Models.DOTA2;
-using Steam.Models.GameEconomy;
-using Steam.Models.GameServers;
-using Steam.Models.SteamCommunity;
-using Steam.Models.SteamEconomy;
-using Steam.Models.SteamPlayer;
-using Steam.Models.TF2;
-using SteamWebAPI2.Models;
-using SteamWebAPI2.Models.CSGO;
-using SteamWebAPI2.Models.DOTA2;
-using SteamWebAPI2.Models.GameEconomy;
-using SteamWebAPI2.Models.GameServers;
-using SteamWebAPI2.Models.SteamCommunity;
-using SteamWebAPI2.Models.SteamEconomy;
-using SteamWebAPI2.Models.SteamPlayer;
-using SteamWebAPI2.Models.TF2;
-using SteamWebAPI2.Utilities;
+using SteamCompare.Classes.Models;
+using SteamCompare.Classes.Models.CSGO;
+using SteamCompare.Classes.Models.DOTA2;
+using SteamCompare.Classes.Models.GameEconomy;
+using SteamCompare.Classes.Models.GameServers;
+using SteamCompare.Classes.Models.SteamCommunity;
+using SteamCompare.Classes.Models.SteamEconomy;
+using SteamCompare.Classes.Models.SteamPlayer;
+using SteamCompare.Classes.Models.TF2;
+using SteamCompare.Classes.WebAPI.Models;
+using SteamCompare.Classes.WebAPI.Models.CSGO;
+using SteamCompare.Classes.WebAPI.Models.DOTA2;
+using SteamCompare.Classes.WebAPI.Models.GameEconomy;
+using SteamCompare.Classes.WebAPI.Models.GameServers;
+using SteamCompare.Classes.WebAPI.Models.SteamCommunity;
+using SteamCompare.Classes.WebAPI.Models.SteamEconomy;
+using SteamCompare.Classes.WebAPI.Models.SteamPlayer;
+using SteamCompare.Classes.WebAPI.Models.TF2;
+using SteamCompare.Classes.WebAPI.Utilities;
 
-namespace SteamWebAPI2.Mappings
+namespace SteamCompare.Classes.WebAPI.Mappings
 {
     public class SteamWebResponseProfile : Profile
     {
         public SteamWebResponseProfile()
         {
             CreateSteamWebResponseMap<ServerStatusResultContainer, ServerStatusModel>();
-            CreateSteamWebResponseMap<GameItemResultContainer, IReadOnlyCollection<Steam.Models.DOTA2.GameItem>>();
-            CreateSteamWebResponseMap<HeroResultContainer, IReadOnlyCollection<Steam.Models.DOTA2.Hero>>();
+            CreateSteamWebResponseMap<GameItemResultContainer, IReadOnlyCollection<SteamCompare.Classes.Models.DOTA2.GameItem>>();
+            CreateSteamWebResponseMap<HeroResultContainer, IReadOnlyCollection<SteamCompare.Classes.Models.DOTA2.Hero>>();
             CreateSteamWebResponseMap<ItemIconPathResultContainer, string>();
-            CreateSteamWebResponseMap<RarityResultContainer, IReadOnlyCollection<Steam.Models.DOTA2.Rarity>>();
+            CreateSteamWebResponseMap<RarityResultContainer, IReadOnlyCollection<SteamCompare.Classes.Models.DOTA2.Rarity>>();
             CreateSteamWebResponseMap<PrizePoolResultContainer, uint>();
             CreateSteamWebResponseMap<PlayerOfficialInfoResultContainer, PlayerOfficialInfoModel>();
             CreateSteamWebResponseMap<ProPlayerListResult, ProPlayerDetailModel>();
@@ -39,14 +39,14 @@ namespace SteamWebAPI2.Mappings
             CreateSteamWebResponseMap<MatchDetailResultContainer, MatchDetailModel>();
             CreateSteamWebResponseMap<MatchHistoryResultContainer, MatchHistoryModel>();
             CreateSteamWebResponseMap<MatchHistoryBySequenceNumberResultContainer, IReadOnlyCollection<MatchHistoryMatchModel>>();
-            CreateSteamWebResponseMap<TeamInfoResultContainer, IReadOnlyCollection<Steam.Models.DOTA2.TeamInfo>>();
+            CreateSteamWebResponseMap<TeamInfoResultContainer, IReadOnlyCollection<SteamCompare.Classes.Models.DOTA2.TeamInfo>>();
             CreateSteamWebResponseMap<EconItemResultContainer, EconItemResultModel>();
             CreateSteamWebResponseMap<SchemaUrlResultContainer, string>();
             CreateSteamWebResponseMap<StoreMetaDataResultContainer, StoreMetaDataModel>();
             CreateSteamWebResponseMap<StoreStatusResultContainer, uint>();
-            CreateSteamWebResponseMap<TradeHistoryResultContainer, Steam.Models.SteamEconomy.TradeHistoryModel>();
-            CreateSteamWebResponseMap<TradeOffersResultContainer, Steam.Models.SteamEconomy.TradeOffersResultModel>();
-            CreateSteamWebResponseMap<TradeOfferResultContainer, Steam.Models.SteamEconomy.TradeOfferResultModel>();
+            CreateSteamWebResponseMap<TradeHistoryResultContainer, SteamCompare.Classes.Models.SteamEconomy.TradeHistoryModel>();
+            CreateSteamWebResponseMap<TradeOffersResultContainer, SteamCompare.Classes.Models.SteamEconomy.TradeOffersResultModel>();
+            CreateSteamWebResponseMap<TradeOfferResultContainer, SteamCompare.Classes.Models.SteamEconomy.TradeOfferResultModel>();
             CreateSteamWebResponseMap<GameClientResultContainer, GameClientResultModel>();
             CreateSteamWebResponseMap<PlayingSharedGameResultContainer, ulong?>();
             CreateSteamWebResponseMap<CommunityBadgeProgressResultContainer, IReadOnlyCollection<BadgeQuestModel>>();

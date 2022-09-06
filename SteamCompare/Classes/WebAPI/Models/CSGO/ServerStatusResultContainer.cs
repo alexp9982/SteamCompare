@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
-using SteamWebAPI2.Utilities.JsonConverters;
+using SteamCompare.Classes.WebAPI.Utilities.JsonConverters;
 using System.Collections.Generic;
 
-namespace SteamWebAPI2.Models.CSGO
+namespace SteamCompare.Classes.WebAPI.Models.CSGO
 {
     internal class ServerStatusApp
     {

@@ -1,9 +1,9 @@
-﻿using Steam.Models;
-using SteamWebAPI2.Utilities;
+﻿using SteamCompare.Classes.Models;
+using SteamCompare.Classes.WebAPI.Utilities;
 using System;
 using System.Threading.Tasks;
 
-namespace SteamWebAPI2.Interfaces
+namespace SteamCompare.Classes.WebAPI.Interfaces
 {
     public interface ISteamNews
     {

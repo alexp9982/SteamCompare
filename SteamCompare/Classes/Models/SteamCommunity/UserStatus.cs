@@ -1,4 +1,4 @@
-﻿namespace Steam.Models.SteamCommunity
+﻿namespace SteamCompare.Classes.Models.SteamCommunity
 {
     /// <summary>
     /// Indicates the current status of the user on the Steam network

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Steam.Models.DOTA2
+namespace SteamCompare.Classes.Models.DOTA2
 {
     public class MatchHistoryMatchModel
     {

@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using AutoMapper;
-using Steam.Models.DOTA2;
-using SteamWebAPI2.Models.DOTA2;
-using SteamWebAPI2.Utilities;
+using SteamCompare.Classes.Models.DOTA2;
+using SteamCompare.Classes.WebAPI.Models.DOTA2;
+using SteamCompare.Classes.WebAPI.Utilities;
 
-namespace SteamWebAPI2.Mappings
+namespace SteamCompare.Classes.WebAPI.Mappings
 {
     public class DOTA2MatchProfile : Profile
     {
@@ -62,9 +62,9 @@ namespace SteamWebAPI2.Mappings
                 context.Mapper.Map<IList<MatchHistoryMatch>, IReadOnlyCollection<MatchHistoryMatchModel>>(src.Result != null ? src.Result.Matches : null)
             );
 
-            CreateMap<SteamWebAPI2.Models.DOTA2.TeamInfo, Steam.Models.DOTA2.TeamInfo>();
-            CreateMap<TeamInfoResultContainer, IReadOnlyCollection<Steam.Models.DOTA2.TeamInfo>>().ConvertUsing((src, dest, context) =>
-                context.Mapper.Map<IList<SteamWebAPI2.Models.DOTA2.TeamInfo>, IReadOnlyCollection<Steam.Models.DOTA2.TeamInfo>>(src.Result != null ? src.Result.Teams : null)
+            CreateMap<SteamCompare.Classes.WebAPI.Models.DOTA2.TeamInfo, SteamCompare.Classes.Models.DOTA2.TeamInfo>();
+            CreateMap<TeamInfoResultContainer, IReadOnlyCollection<SteamCompare.Classes.Models.DOTA2.TeamInfo>>().ConvertUsing((src, dest, context) =>
+                context.Mapper.Map<IList<SteamCompare.Classes.WebAPI.Models.DOTA2.TeamInfo>, IReadOnlyCollection<SteamCompare.Classes.Models.DOTA2.TeamInfo>>(src.Result != null ? src.Result.Teams : null)
             );
         }
     }

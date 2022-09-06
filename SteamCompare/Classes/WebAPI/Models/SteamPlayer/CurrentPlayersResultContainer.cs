@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace SteamWebAPI2.Models.SteamPlayer
+namespace SteamCompare.Classes.WebAPI.Models.SteamPlayer
 {
     internal class CurrentPlayersResult
     {

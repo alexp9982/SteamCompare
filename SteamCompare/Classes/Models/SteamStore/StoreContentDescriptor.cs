@@ -1,4 +1,4 @@
-namespace Steam.Models.SteamStore
+namespace SteamCompare.Classes.Models.SteamStore
 {
     public class StoreContentDescriptor
     {

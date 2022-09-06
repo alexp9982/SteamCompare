@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace SteamWebAPI2.Utilities
+namespace SteamCompare.Classes.WebAPI.Utilities
 {
     internal enum HttpMethod
     {
@@ -31,7 +31,6 @@ namespace SteamWebAPI2.Utilities
         /// </summary>
         /// <param name="steamWebApiBaseUrl">Base URL for the API (such as http://api.steampowered.com)</param>
         /// <param name="steamWebApiKey">Secret Steam Web API key provided at the Valve developer website</param>
-        /// <param name="steamWebHttpClient">Optional custom http client implementation for dependency injection</param>
         public SteamWebRequest(string steamWebApiBaseUrl, string steamWebApiKey, HttpClient httpClient = null)
         {
             if (string.IsNullOrWhiteSpace(steamWebApiBaseUrl))

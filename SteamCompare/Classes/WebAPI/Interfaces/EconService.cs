@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using Steam.Models.SteamEconomy;
-using SteamWebAPI2.Models.SteamEconomy;
-using SteamWebAPI2.Utilities;
+using SteamCompare.Classes.Models.SteamEconomy;
+using SteamCompare.Classes.WebAPI.Models.SteamEconomy;
+using SteamCompare.Classes.WebAPI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SteamWebAPI2.Interfaces
+namespace SteamCompare.Classes.WebAPI.Interfaces
 {
     public class EconService : IEconService
     {
@@ -67,7 +67,7 @@ namespace SteamWebAPI2.Interfaces
 
             var steamWebResponseModel = mapper.Map<
                 ISteamWebResponse<TradeHistoryResultContainer>,
-                ISteamWebResponse<Steam.Models.SteamEconomy.TradeHistoryModel>>(steamWebResponse);
+                ISteamWebResponse<SteamCompare.Classes.Models.SteamEconomy.TradeHistoryModel>>(steamWebResponse);
 
             return steamWebResponseModel;
         }
@@ -113,7 +113,7 @@ namespace SteamWebAPI2.Interfaces
 
             var steamWebResponseModel = mapper.Map<
                 ISteamWebResponse<TradeOffersResultContainer>,
-                ISteamWebResponse<Steam.Models.SteamEconomy.TradeOffersResultModel>>(steamWebResponse);
+                ISteamWebResponse<SteamCompare.Classes.Models.SteamEconomy.TradeOffersResultModel>>(steamWebResponse);
 
             return steamWebResponseModel;
         }
@@ -139,7 +139,7 @@ namespace SteamWebAPI2.Interfaces
 
             var steamWebResponseModel = mapper.Map<
                 ISteamWebResponse<TradeOfferResultContainer>,
-                ISteamWebResponse<Steam.Models.SteamEconomy.TradeOfferResultModel>>(steamWebResponse);
+                ISteamWebResponse<SteamCompare.Classes.Models.SteamEconomy.TradeOfferResultModel>>(steamWebResponse);
 
             return steamWebResponseModel;
         }

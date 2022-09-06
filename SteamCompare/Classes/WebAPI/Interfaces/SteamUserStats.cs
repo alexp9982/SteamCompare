@@ -1,16 +1,16 @@
 ﻿using AutoMapper;
-using Steam.Models;
-using Steam.Models.SteamCommunity;
-using Steam.Models.SteamPlayer;
-using SteamWebAPI2.Models;
-using SteamWebAPI2.Models.SteamCommunity;
-using SteamWebAPI2.Models.SteamPlayer;
-using SteamWebAPI2.Utilities;
+using SteamCompare.Classes.Models;
+using SteamCompare.Classes.Models.SteamCommunity;
+using SteamCompare.Classes.Models.SteamPlayer;
+using SteamCompare.Classes.WebAPI.Models;
+using SteamCompare.Classes.WebAPI.Models.SteamCommunity;
+using SteamCompare.Classes.WebAPI.Models.SteamPlayer;
+using SteamCompare.Classes.WebAPI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SteamWebAPI2.Interfaces
+namespace SteamCompare.Classes.WebAPI.Interfaces
 {
     public class SteamUserStats : ISteamUserStats
     {

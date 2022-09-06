@@ -1,6 +1,6 @@
 using System;
 
-namespace Steam.Models.SteamEconomy
+namespace SteamCompare.Classes.Models.SteamEconomy
 {
     public class TradeHoldDurationsModel
     {

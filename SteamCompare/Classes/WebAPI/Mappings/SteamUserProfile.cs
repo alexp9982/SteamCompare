@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using AutoMapper;
-using Steam.Models.SteamCommunity;
-using SteamWebAPI2.Models.SteamCommunity;
-using SteamWebAPI2.Models.SteamPlayer;
+using SteamCompare.Classes.Models.SteamCommunity;
+using SteamCompare.Classes.WebAPI.Models.SteamCommunity;
+using SteamCompare.Classes.WebAPI.Models.SteamPlayer;
 
-namespace SteamWebAPI2.Mappings
+namespace SteamCompare.Classes.WebAPI.Mappings
 {
     public class SteamUserProfile : Profile
     {

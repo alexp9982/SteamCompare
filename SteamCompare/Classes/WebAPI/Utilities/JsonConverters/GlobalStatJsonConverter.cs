@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using SteamWebAPI2.Models.SteamCommunity;
+using SteamCompare.Classes.WebAPI.Models.SteamCommunity;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace SteamWebAPI2.Utilities.JsonConverters
+namespace SteamCompare.Classes.WebAPI.Utilities.JsonConverters
 {
     internal class GlobalStatJsonConverter : JsonConverter
     {

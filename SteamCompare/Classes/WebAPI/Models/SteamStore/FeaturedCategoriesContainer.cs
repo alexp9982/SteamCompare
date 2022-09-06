@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace SteamWebAPI2.Models.SteamStore
+namespace SteamCompare.Classes.WebAPI.Models.SteamStore
 {
     internal class Item
     {

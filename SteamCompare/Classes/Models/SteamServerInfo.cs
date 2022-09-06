@@ -1,7 +1,7 @@
-﻿using Steam.Models.Utilities;
+﻿using SteamCompare.Classes.Models.Utilities;
 using System;
 
-namespace Steam.Models
+namespace SteamCompare.Classes.Models
 {
     public class SteamServerInfo
     {
