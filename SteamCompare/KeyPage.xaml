@@ -61,7 +61,15 @@
                Placeholder="Enter API Key"
                Text="{Binding Apikey}"
                TextChanged="OnText1Changed"
-               IsPassword="True"/>
+               IsPassword="True">
+            <Entry.Keyboard>
+                <Keyboard x:FactoryMethod="Create">
+                    <x:Arguments>
+                        <KeyboardFlags>None</KeyboardFlags>
+                    </x:Arguments>
+                </Keyboard>
+            </Entry.Keyboard>
+        </Entry>
         <Button Grid.Row="8" 
                 Grid.Column="1"
                 Text="Continue"

@@ -145,6 +145,8 @@ I intend to do everything in this list, however, depending on my schedule, I may
 - ❌ Create splashscreen with instructions on first launch
 - ❌ Change styling of application
 - ❌ Write workflows (GitHub Actions) to build and draft releases
+- ❌ Add filters to the results page
+- ❌ Add a search bar to the results page
 
 ---
 

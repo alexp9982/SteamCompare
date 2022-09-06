@@ -12,6 +12,10 @@
                 x:Name="ErrorText"
                 TextColor="#f44336"
                 Text=""/>
+            <Label
+                Text="When notifications are on, you will be notified upon result completion"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
             <Button
                 x:Name="NotifyButton"
                 Text="Enable Notifications"
