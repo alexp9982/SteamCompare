@@ -87,7 +87,7 @@ Step 8. Click Finish. The import successful message should appear. Click Ok unti
 
 ![Step 8](Images/InstallStep8.png)
 
-Step 9. Double click the MSIX package and then click Install. This might take a little bit depending on your computer screen.
+Step 9. Double click the MSIX package and then click Install. This might take a little bit depending on your computer.
 
 ![Step 9](Images/InstallStep9.png)
 
