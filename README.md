@@ -1,5 +1,6 @@
 # SteamCompare
 
+## During the time college is in session, development will be slowed on this. Thanks for your understanding!
 
 ### Table of Contents
 
